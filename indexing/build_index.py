@@ -2,7 +2,6 @@ import json
 import os
 import re
 import faiss
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -17,18 +16,35 @@ def load_data():
     return data["documents"]
 
 
+def tokenize_text(text):
+    return re.findall(r"\w+|[^\w\s]", text, flags=re.UNICODE)
+
+
+def detokenize(tokens):
+    text = " ".join(tokens)
+    text = text.replace(" .", ".").replace(" ,", ",").replace(" !", "!").replace(" ?", "?")
+    text = text.replace(" ;", ";").replace(" :", ":")
+    return text
+
+
 def chunk_docs(docs):
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=800,
-        chunk_overlap=200
-    )
+    chunk_size = 600
+    chunk_overlap = 100
 
     chunks, metadata = [], []
 
     for doc in docs:
-        splits = splitter.split_text(doc["text"])
-        for chunk_index, chunk in enumerate(splits):
-            chunks.append(chunk)
+        tokens = tokenize_text(doc["text"])
+        start = 0
+        chunk_index = 0
+
+        while start < len(tokens):
+            end = min(start + chunk_size, len(tokens))
+            chunk_tokens = tokens[start:end]
+            chunk_text = detokenize(chunk_tokens)
+            chunk_index += 1
+
+            chunks.append(chunk_text)
             metadata.append({
                 "doc_id": doc["doc_id"],
                 "title": doc["title"],
@@ -36,8 +52,13 @@ def chunk_docs(docs):
                 "source": doc.get("source"),
                 "url": doc.get("url"),
                 "date": doc.get("date"),
-                "chunk_id": f"{doc['doc_id']}-{chunk_index + 1}",
+                "chunk_id": f"{doc['doc_id']}-{chunk_index}",
+                "token_count": len(chunk_tokens),
             })
+
+            if end == len(tokens):
+                break
+            start = end - chunk_overlap
 
     return chunks, metadata
 

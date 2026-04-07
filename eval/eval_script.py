@@ -9,6 +9,8 @@ OUTPUT_PATH = Path("eval_results.json")
 pipeline = RAGPipeline()
 
 def score_overlap(answer, expected):
+    if not expected:
+        return 0.0
     answer_tokens = set(re.findall(r"\w+", answer.lower()))
     expected_tokens = set(re.findall(r"\w+", expected.lower()))
     if not expected_tokens:
@@ -18,16 +20,21 @@ def score_overlap(answer, expected):
 
 def score_citations(answer, expected_sources):
     cited = set(re.findall(r"DOC-\d+", answer))
-    if not expected_sources:
+    expected_set = set(expected_sources)
+    if not expected_set:
         return 1.0 if cited else 0.0
-    return len(cited & set(expected_sources)) / len(expected_sources)
+
+    true_positives = len(cited & expected_set)
+    precision = true_positives / len(cited) if cited else 0.0
+    recall = true_positives / len(expected_set)
+    return (precision + recall) / 2
 
 
 def score_reasoning(trace):
     if not trace:
         return 0.0
     steps = [line for line in trace.splitlines() if line.strip()]
-    return min(1.0, len(steps) / 3)
+    return min(1.0, len(steps) / 4)
 
 
 with EVAL_PATH.open("r", encoding="utf-8") as f:
