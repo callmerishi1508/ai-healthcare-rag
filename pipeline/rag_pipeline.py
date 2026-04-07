@@ -1,4 +1,13 @@
+from agents.retriever_agent import RetrieverAgent
+from agents.reasoning_agent import ReasoningAgent
+from agents.critic_agent import CriticAgent
+
 class RAGPipeline:
+    def __init__(self):
+        self.retriever = RetrieverAgent()
+        self.reasoner = ReasoningAgent()
+        self.critic = CriticAgent()
+
     def run(self, query):
         try:
             sub_queries = self.retriever.decompose_query(query)
@@ -27,7 +36,6 @@ class RAGPipeline:
                 "critique": critique
             }
         except Exception as e:
-            # Handle OpenAI rate limits or other errors
             error_msg = f"Error processing query: {str(e)}"
             return {
                 "sub_queries": ["Query processing failed"],
