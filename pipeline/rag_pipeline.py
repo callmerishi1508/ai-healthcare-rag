@@ -7,17 +7,25 @@ class RAGPipeline:
         self.retriever = RetrieverAgent()
         self.reasoner = ReasoningAgent()
         self.critic = CriticAgent()
+        self.history = []
 
-    def run(self, query):
+    def _build_context_query(self, query):
+        if not self.history:
+            return query
+        recent = " ".join(item["query"] for item in self.history[-3:])
+        return f"{query} (follow-up on: {recent})"
+
+    def run(self, query, use_history=True):
         try:
-            sub_queries = self.retriever.decompose_query(query)
+            expanded_query = self._build_context_query(query) if use_history else query
+            complex_query = self.retriever.is_complex(expanded_query)
+            sub_queries = self.retriever.decompose_query(expanded_query) if complex_query else [expanded_query]
 
             all_context = []
             for sq in sub_queries:
-                retrieved = self.retriever.retrieve(sq, k=3)
+                retrieved = self.retriever.retrieve(sq, k=5)
                 all_context.extend(retrieved)
 
-            # Remove duplicates
             seen = set()
             unique_context = []
             for c in all_context:
@@ -26,20 +34,29 @@ class RAGPipeline:
                     seen.add(key)
                     unique_context.append(c)
 
-            answer = self.reasoner.generate_answer(query, unique_context)
+            answer, trace = self.reasoner.generate_answer(expanded_query, unique_context)
             critique = self.critic.validate(answer, unique_context)
 
-            return {
+            record = {
+                "query": query,
+                "expanded_query": expanded_query,
                 "sub_queries": sub_queries,
                 "context": unique_context,
                 "answer": answer,
-                "critique": critique
+                "trace": trace,
+                "critique": critique,
             }
+            self.history.append(record)
+
+            return record
         except Exception as e:
             error_msg = f"Error processing query: {str(e)}"
             return {
+                "query": query,
+                "expanded_query": query,
                 "sub_queries": ["Query processing failed"],
                 "context": [],
                 "answer": error_msg,
-                "critique": "Unable to validate due to API error",
+                "trace": "",
+                "critique": "Unable to validate due to pipeline error",
             }
