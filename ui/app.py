@@ -1,4 +1,12 @@
 import os
+import sys
+from pathlib import Path
+
+root = Path.cwd()
+if not (root / "pipeline").is_dir():
+    root = Path(__file__).resolve().parents[1]
+
+sys.path.insert(0, str(root))
 
 if not os.path.exists("index.faiss"):
     from indexing.build_index import build_index

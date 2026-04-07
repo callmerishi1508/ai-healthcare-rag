@@ -1,24 +1,27 @@
+import os
 from openai import OpenAI
 
-client = OpenAI()
 
 class CriticAgent:
+
     def validate(self, answer, context):
+        context_text = "\n".join([c["text"] for c in context])
+
         prompt = f"""
-        Check if this answer is fully supported by context.
+Check the answer against context.
 
-        Answer:
-        {answer}
+Answer:
+{answer}
 
-        Context:
-        {context}
+Context:
+{context_text}
 
-        Output:
-        - Unsupported claims
-        - Missing citations
-        """
-
-        response = client.chat.completions.create(
+Return:
+- Unsupported claims
+- Missing citations
+- Final verdict (PASS/FAIL)
+"""
+        response = self.client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}]
         )

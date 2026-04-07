@@ -1,0 +1,37 @@
+from agents.retriever_agent import RetrieverAgent
+from agents.reasoning_agent import ReasoningAgent
+from agents.critic_agent import CriticAgent
+
+
+class RAGPipeline:
+    def __init__(self):
+        self.retriever = RetrieverAgent()
+        self.reasoner = ReasoningAgent()
+        self.critic = CriticAgent()
+
+    def run(self, query):
+        sub_queries = self.retriever.decompose_query(query)
+
+        all_context = []
+        for sq in sub_queries:
+            retrieved = self.retriever.retrieve(sq, k=3)
+            all_context.extend(retrieved)
+
+        # Remove duplicates
+        seen = set()
+        unique_context = []
+        for c in all_context:
+            key = (c['meta']['doc_id'], c['text'])
+            if key not in seen:
+                seen.add(key)
+                unique_context.append(c)
+
+        answer = self.reasoner.generate_answer(query, unique_context)
+        critique = self.critic.validate(answer, unique_context)
+
+        return {
+            'sub_queries': sub_queries,
+            'context': unique_context,
+            'answer': answer,
+            'critique': critique,
+        }
