@@ -1,0 +1,348 @@
+{
+  "results": [
+    {
+      "eval_id": "EVAL-001",
+      "question": "What was the sensitivity and specificity of the AI system for diabetic retinopathy screening, and how did it compare to ophthalmologists?",
+      "answer": "sensitivity, 94.1% specificity). [Citation: DOC-001] achieved an AUROC of 0.91 with a lead time of 8-16 hours before clinical recognition \u2014 a critical window for intervention. [Citation: DOC-032] in AUROC over a vitals-only model, highlighting the value of unstructured clinical data. [Citation: DOC-011] a C-statistic of 0.74 for readmission prediction, compared to 0.67 for the standard HOSPITAL readmission risk score that uses only clinical factors. [Citation: DOC-041] growing global epidemic affecting 50% of young adults in East Asia \u2014 AI systems trained on axial length measurements and corneal topography predict high myopia risk (>-6D) with 85% accuracy, guiding prophylactic atropine treatment timing. [Citation: DOC-049]",
+      "expected_answer": "The CNN achieved 97.1% sensitivity and 95.4% specificity for referable DR, outperforming the average ophthalmologist panel (93.8% sensitivity, 94.1% specificity).",
+      "expected_sources": [
+        "DOC-001"
+      ],
+      "score": {
+        "factual_accuracy": 0.45,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.725,
+        "semantic_similarity": 0.441406786441803
+      }
+    },
+    {
+      "eval_id": "EVAL-002",
+      "question": "How many AI/ML-enabled medical devices has the FDA cleared or approved as of 2025, and which medical specialty dominates?",
+      "answer": "The FDA has cleared or approved over 950 AI/ML-enabled medical devices as of October 2025, up from 692 at the end of 2023 \u2014 a 37% increase. [Citation: DOC-018] safety reviews and that all training data be approved by healthcare authorities. [Citation: DOC-021] Direct-to-consumer (DTC) health AI apps have exploded, with over 350,000 health-related apps available on the Apple App Store and Google Play as of 2025. [Citation: DOC-060] in 2024) automates the submission and tracking of authorization requests, reducing approval times from 14 days to 3 days. [Citation: DOC-016] However, no AI-discovered drug has yet received FDA approval. [Citation: DOC-007]",
+      "expected_answer": "Over 950 AI/ML-enabled medical devices as of October 2025. Radiology accounts for 76% of approvals, followed by cardiology (11%) and ophthalmology (5%).",
+      "expected_sources": [
+        "DOC-018"
+      ],
+      "score": {
+        "factual_accuracy": 0.5652173913043478,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.7826086956521738,
+        "semantic_similarity": 0.6033155918121338
+      }
+    },
+    {
+      "eval_id": "EVAL-003",
+      "question": "Compare the approaches of Google, Microsoft, and Amazon in healthcare AI. Which company has the highest estimated healthcare AI revenue?",
+      "answer": "The tension between AI's hunger for data and patient privacy requirements is one of healthcare's defining challenges. [Citation: DOC-020] The landscape of medical foundation models is rapidly evolving. [Citation: DOC-030] Big tech companies have divergent strategies for healthcare AI, driven by their existing assets and competitive positioning. [Citation: DOC-038] Social media platforms generate vast amounts of health-relevant data, from self-reported symptoms to medication experiences. [Citation: DOC-056] companies include: Niramai (breast cancer screening using AI + thermal imaging, operating in 26 states), Qure.ai (chest X-ray and head CT AI, deployed in 90+ countries, 25 million scans processed), SigTuple (AI microscopy for blood and urine analysis, 10 million scans), and Tricog (AI ECG interpretation for cardiac emergencies, 7 million ECGs analyzed). [Citation: DOC-039]",
+      "expected_answer": "Microsoft leads with ~$1.5B estimated healthcare AI revenue in 2025, driven by Nuance/DAX Copilot. Amazon AWS follows at ~$1.2B (cloud infra + One Medical). Google is at ~$800M (research-led, cloud consumption model). Microsoft's strategy centers on enterprise EHR integration, Google on research and cloud APIs, Amazon on infrastructure and consumer clinics.",
+      "expected_sources": [
+        "DOC-038"
+      ],
+      "score": {
+        "factual_accuracy": 0.22727272727272727,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6136363636363636,
+        "semantic_similarity": 0.49861419200897217
+      }
+    },
+    {
+      "eval_id": "EVAL-004",
+      "question": "What evidence exists that AI triage of chest X-rays can reduce mortality, and what was the study design?",
+      "answer": "Dentistry is an emerging frontier for healthcare AI, driven by the visual nature of dental diagnostics and the high volume of dental radiographs (over 500 million taken annually in the US alone). [Citation: DOC-050] (8.7%) and lowest for pneumothorax (1.2%). [Citation: DOC-003] companies include: Niramai (breast cancer screening using AI + thermal imaging, operating in 26 states), Qure.ai (chest X-ray and head CT AI, deployed in 90+ countries, 25 million scans processed), SigTuple (AI microscopy for blood and urine analysis, 10 million scans), and Tricog (AI ECG interpretation for cardiac emergencies, 7 million ECGs analyzed). [Citation: DOC-039] during training, (d) causal modeling to distinguish legitimate clinical variation from systematic bias, and (e) diverse development teams \u2014 studies with at least 30% underrepresented group members in the development team had 50% fewer documented bias incidents. [Citation: DOC-019] reasoning with ambiguous presentations, and MedHalt evaluates hallucination rates in clinical contexts. [Citation: DOC-030]",
+      "expected_answer": "A multicenter RCT across 22 EDs (n\u224850,000) showed AI triage reduced time from CXR acquisition to actionable report from 264 to 47 minutes. 30-day mortality for critical findings was 8.2% (AI arm) vs 11.4% (control), HR 0.71. The AI system maintained 96.3% sensitivity for critical findings.",
+      "expected_sources": [
+        "DOC-003"
+      ],
+      "score": {
+        "factual_accuracy": 0.1956521739130435,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5978260869565217,
+        "semantic_similarity": 0.5155580639839172
+      }
+    },
+    {
+      "eval_id": "EVAL-005",
+      "question": "What is the current state of AI-discovered drugs? Have any received FDA approval?",
+      "answer": "Lilly and Novartis), and Generate Biomedicines (protein therapeutics, $700M raised). [Citation: DOC-007] Healthcare AI regulation is diverging globally, creating challenges for companies operating across markets. [Citation: DOC-021] the most-funded healthcare AI segments were: AI drug discovery ($2.3B), clinical decision support/ambient AI ($1.8B), medical imaging AI ($0.9B), and operational AI ($0.7B). [Citation: DOC-037]",
+      "expected_answer": "No AI-discovered drug has yet received FDA approval as of 2025. First approvals are expected in 2027-2028. Frontrunners include Insilico Medicine's INS018_055 (IPF) and Recursion's REC-994. AI-designed molecules have 2.5x higher probability of advancing from Phase I to Phase II (18% vs 7.4%). Cumulative funding in AI drug discovery has reached $8.7B with $2.3B invested in 2025 alone.",
+      "expected_sources": [
+        "DOC-007",
+        "DOC-006"
+      ],
+      "score": {
+        "factual_accuracy": 0.12280701754385964,
+        "citation_quality": 0.4,
+        "reasoning_clarity": 0.75,
+        "completeness": 0.4364035087719298,
+        "semantic_similarity": 0.7286645770072937
+      }
+    },
+    {
+      "eval_id": "EVAL-006",
+      "question": "How does algorithmic bias manifest in healthcare AI, and what mitigation strategies have evidence?",
+      "answer": "safety reviews and that all training data be approved by healthcare authorities. [Citation: DOC-021] As healthcare AI proliferates, the need for actionable ethical frameworks has become urgent. [Citation: DOC-047] This systematic review analyzed 234 studies published between 2019 and 2025 that evaluated bias in healthcare AI systems. [Citation: DOC-019] Emergency departments are among the most data-rich, high-pressure environments in healthcare \u2014 making them prime targets for AI deployment. [Citation: DOC-043] Its 2023 guidance on 'Clinical Decision Support Software' exempted tools that provide recommendations for users to discuss with their healthcare provider \u2014 a loophole that many DTC apps exploit. [Citation: DOC-060]",
+      "expected_answer": "Bias was documented in 42% of 234 evaluated systems. Types include racial bias (68 studies, e.g., Optum algorithm underestimating Black patient needs), gender bias (31 studies, cardiovascular risk under-prediction in women), age bias (19 studies), and socioeconomic bias (23 studies). Evidence-based mitigations: prospective bias audits (NIST framework), stratified performance reporting, adversarial debiasing, causal modeling, and diverse development teams (30%+ underrepresented members \u2192 50% fewer bias incidents).",
+      "expected_sources": [
+        "DOC-019",
+        "DOC-005"
+      ],
+      "score": {
+        "factual_accuracy": 0.12280701754385964,
+        "citation_quality": 0.28571428571428575,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5614035087719298,
+        "semantic_similarity": 0.45951491594314575
+      }
+    },
+    {
+      "eval_id": "EVAL-007",
+      "question": "What is the ROI profile of ambient AI scribes, and which companies lead this market?",
+      "answer": "Proving return on investment remains the critical challenge for healthcare AI adoption. [Citation: DOC-048] integration through its $19.7B acquisition of Nuance Communications (2022). [Citation: DOC-038] Nurses, who represent the largest healthcare workforce segment (4.7 million RNs in the US), are both key beneficiaries and stakeholders in healthcare AI deployment. [Citation: DOC-059] Physician burnout is at crisis levels, and clinical documentation is a primary driver \u2014 US physicians spend an average of 16 minutes per patient on documentation and 1-2 hours on 'pajama time' (after-hours EHR work). [Citation: DOC-013] safety reviews and that all training data be approved by healthcare authorities. [Citation: DOC-021]",
+      "expected_answer": "Ambient AI scribes have ROI of 3:1 within 6 months, classified as a 'quick win'. Abridge leads ($250M raised at $2.5B valuation, 45M patients covered, 72% documentation time reduction). Microsoft DAX Copilot is in 550+ hospitals. Nabla focuses on multilingual support. Cost is $1,000-$1,500 per physician per month but cost-effective given $500K-$1M physician replacement cost.",
+      "expected_sources": [
+        "DOC-013",
+        "DOC-048"
+      ],
+      "score": {
+        "factual_accuracy": 0.23636363636363636,
+        "citation_quality": 0.5714285714285715,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6181818181818182,
+        "semantic_similarity": 0.5620676875114441
+      }
+    },
+    {
+      "eval_id": "EVAL-008",
+      "question": "How is India positioning itself in healthcare AI, and what role does the ABDM play?",
+      "answer": "the most-funded healthcare AI segments were: AI drug discovery ($2.3B), clinical decision support/ambient AI ($1.8B), medical imaging AI ($0.9B), and operational AI ($0.7B). [Citation: DOC-037] safety reviews and that all training data be approved by healthcare authorities. [Citation: DOC-021] companies include: Niramai (breast cancer screening using AI + thermal imaging, operating in 26 states), Qure.ai (chest X-ray and head CT AI, deployed in 90+ countries, 25 million scans processed), SigTuple (AI microscopy for blood and urine analysis, 10 million scans), and Tricog (AI ECG interpretation for cardiac emergencies, 7 million ECGs analyzed). [Citation: DOC-039] care and retain the right to opt out. [Citation: DOC-047] verify the logic. [Citation: DOC-004]",
+      "expected_answer": "India's healthcare AI market is $1.2B in 2025, projected $5.8B by 2030. ABDM has created 620M Ayushman Bharat Health Accounts and the HIE-CM for consent-based record sharing. Key companies: Qure.ai (90+ countries, 25M scans), Niramai (breast cancer screening in 26 states), SigTuple (10M scans), Tricog (7M ECGs). Challenges: data quality, no specific AI medical device regulation yet (CDSCO draft expected 2026), no separate reimbursement for AI services.",
+      "expected_sources": [
+        "DOC-039"
+      ],
+      "score": {
+        "factual_accuracy": 0.3787878787878788,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6893939393939394,
+        "semantic_similarity": 0.6994506120681763
+      }
+    },
+    {
+      "eval_id": "EVAL-009",
+      "question": "What are the key safety concerns with using LLMs in clinical practice?",
+      "answer": "Large language models (LLMs) are rapidly entering clinical workflows, from drafting discharge summaries to suggesting differential diagnoses. [Citation: DOC-010] reasoning with ambiguous presentations, and MedHalt evaluates hallucination rates in clinical contexts. [Citation: DOC-030] AI is classified as 'high-risk,' requiring conformity assessments, mandatory risk management systems, bias audits, transparency documentation, and human oversight. [Citation: DOC-021]",
+      "expected_answer": "Hallucination rates range from 3-12% depending on model and task. Most dangerous failure modes: fabricated drug dosages and non-existent drug interactions. 23% of AI treatment recommendations contain at least one clinically significant error without RAG, dropping to 4% with RAG. FDA has not established a clear regulatory pathway for LLM-based clinical decision support. Consensus: LLMs should be 'copilots' with mandatory human review.",
+      "expected_sources": [
+        "DOC-010"
+      ],
+      "score": {
+        "factual_accuracy": 0.18032786885245902,
+        "citation_quality": 0.5,
+        "reasoning_clarity": 0.75,
+        "completeness": 0.4651639344262295,
+        "semantic_similarity": 0.5876357555389404
+      }
+    },
+    {
+      "eval_id": "EVAL-010",
+      "question": "How does federated learning address the data privacy challenge in healthcare AI, and what is the largest implementation?",
+      "answer": "institutions without centralizing data. [Citation: DOC-020] Federated learning (FL) enables AI model training across multiple institutions without centralizing patient data, addressing a core tension in healthcare AI: the need for large, diverse datasets vs. [Citation: DOC-036] Clara Holoscan is being used by surgical robotics companies (Intuitive Surgical, Medtronic) to overlay real-time AI segmentation during minimally invasive surgery. [Citation: DOC-028] Digital health venture funding reached $14.7 billion in 2025, a 23% increase from 2024's $11.9 billion but still below the 2021 peak of $29.2 billion. [Citation: DOC-037] in 2024) automates the submission and tracking of authorization requests, reducing approval times from 14 days to 3 days. [Citation: DOC-016]",
+      "expected_answer": "Federated learning trains AI across institutions without centralizing patient data. The largest implementation is the EXAM study \u2014 a chest X-ray model trained across 20 hospitals on 5 continents without sharing patient data, achieving AUROC 0.92 (matching centralized training at 0.93). Technical advances include differential privacy, secure aggregation, and asynchronous FL. Challenges: statistical heterogeneity, governance (data agreements take 6-18 months), and no specific FDA guidance on federated-trained devices.",
+      "expected_sources": [
+        "DOC-036",
+        "DOC-020"
+      ],
+      "score": {
+        "factual_accuracy": 0.26229508196721313,
+        "citation_quality": 0.5714285714285715,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6311475409836066,
+        "semantic_similarity": 0.7287375926971436
+      }
+    },
+    {
+      "eval_id": "EVAL-011",
+      "question": "What AI approaches are being used to address the antibiotic resistance crisis?",
+      "answer": "Antimicrobial resistance (AMR) kills an estimated 1.27 million people annually and is projected to cause 10 million deaths per year by 2050. [Citation: DOC-052] Hospital-acquired infections (HAIs) affect 1 in 31 hospital patients in the US, causing approximately 99,000 deaths and $33 billion in excess costs annually. [Citation: DOC-053]",
+      "expected_answer": "MIT researchers used a graph neural network on 39,000 compounds to discover halicin (effective against pan-resistant A. baumannii), then a molecular transformer on 12M compounds to discover abaucin (species-specific). Phare Bio used diffusion models to generate novel molecules, finding 8 compounds active against MRSA with 3 entering preclinical development. AI advantage: can optimize for specific properties (narrow-spectrum, resistance to known resistance mechanisms). Challenge: development still takes 5-10 years and $300M-$1B per drug.",
+      "expected_sources": [
+        "DOC-052"
+      ],
+      "score": {
+        "factual_accuracy": 0.09375,
+        "citation_quality": 0.6666666666666666,
+        "reasoning_clarity": 0.75,
+        "completeness": 0.421875,
+        "semantic_similarity": 0.3482111096382141
+      }
+    },
+    {
+      "eval_id": "EVAL-012",
+      "question": "What is the current state of brain-computer interfaces for speech restoration, and what companies are involved?",
+      "answer": "Brain-computer interfaces (BCIs) that decode intended speech from neural signals have made remarkable progress. [Citation: DOC-035] Voice contains a wealth of physiological information beyond words. [Citation: DOC-027] Generative AI is reshaping how pharmaceutical companies approach de novo molecule design. [Citation: DOC-007] Big tech companies have divergent strategies for healthcare AI, driven by their existing assets and competitive positioning. [Citation: DOC-038] \u2014 drugs with fewer than 3 active manufacturers had 5.2x higher shortage risk, (2) margin compression \u2014 drugs with declining wholesale acquisition cost over 2+ quarters, and (3) FDA warning letters to manufacturing facilities. [Citation: DOC-017]",
+      "expected_answer": "BrainVoice achieved 7.2% word error rate for 50,000-word vocabulary in ALS patients (approaching 5% WER of smartphone speech recognition). Operates in real-time with 300ms latency. Companies: Neuralink (N1 implant, 12 patients as of 2025), Synchron (Stentrode, minimally invasive, 16 patients), Paradromics (65,000-channel array). Challenges: signal degradation (30-50% over 2-5 years), patient-specific calibration (1-2 weeks), high cost ($50K-$100K).",
+      "expected_sources": [
+        "DOC-035"
+      ],
+      "score": {
+        "factual_accuracy": 0.15517241379310345,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5775862068965517,
+        "semantic_similarity": 0.5157009363174438
+      }
+    },
+    {
+      "eval_id": "EVAL-013",
+      "question": "Across all the evidence, what are the most impactful AI applications in terms of measurable patient outcomes?",
+      "answer": "during training, (d) causal modeling to distinguish legitimate clinical variation from systematic bias, and (e) diverse development teams \u2014 studies with at least 30% underrepresented group members in the development team had 50% fewer documented bias incidents. [Citation: DOC-019] cross-reference smoking history, family cancer risk, and prior imaging trends. [Citation: DOC-004] in darker skin, including regression structures that present differently from lighter-skin presentations. [Citation: DOC-005] and open-source alternatives like Meditron-70B (based on Llama, trained on 48 billion tokens of medical literature, competitive with proprietary models on 8/14 benchmarks). [Citation: DOC-030] Emergency departments are among the most data-rich, high-pressure environments in healthcare \u2014 making them prime targets for AI deployment. [Citation: DOC-043]",
+      "expected_answer": "Top impactful applications by outcome evidence: (1) CXR triage \u2014 3.2% absolute mortality reduction in critical findings (DOC-003). (2) Sepsis prediction \u2014 1.7 percentage point mortality reduction + 0.8-day ICU LOS reduction (DOC-011). (3) AI-enhanced robotic surgery \u2014 52% reduction in ureteral injuries (DOC-031). (4) NEC prediction in NICUs \u2014 23% reduction in NEC requiring surgery (DOC-032). (5) NLP suicide risk assessment \u2014 17% reduction in suicide attempts (DOC-033). (6) AI mammography \u2014 29% more cancers detected with 44% less radiologist workload (DOC-042).",
+      "expected_sources": [
+        "DOC-003",
+        "DOC-011",
+        "DOC-031",
+        "DOC-032",
+        "DOC-033",
+        "DOC-042"
+      ],
+      "score": {
+        "factual_accuracy": 0.09375,
+        "citation_quality": 0.0,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.546875,
+        "semantic_similarity": 0.5898160934448242
+      }
+    },
+    {
+      "eval_id": "EVAL-014",
+      "question": "What are the main barriers to EHR data access for health AI developers?",
+      "answer": "coding), access barriers (restrictive API rate limits, high data access fees), and format fragmentation (HL7v2, CCD-A, FHIR R4 coexist). [Citation: DOC-029] Developing AI for pediatric populations presents unique challenges that are often overlooked in the adult-centric healthcare AI landscape. [Citation: DOC-055] in year one (licensing, integration, training, monitoring) and $600K annually thereafter. [Citation: DOC-048] Key challenges include: (1) non-standardized eligibility criteria across trials, (2) EHR data quality issues (missing data, coding errors), and (3) patient consent and privacy concerns around automated EHR screening. [Citation: DOC-012]",
+      "expected_answer": "Only 42% of health AI developers report 'good' or 'excellent' EHR data access. Key barriers: data quality issues (missing fields, inconsistent coding), access barriers (restrictive API rate limits, high data access fees), format fragmentation (HL7v2, CCD-A, FHIR R4 coexist). Epic dominates with 38% market share (305M records); Oracle Health has 25%. TEFCA launched 2024 but only 45 organizations qualified. Interoperability is primarily an economic/political problem, not a technical one \u2014 FHIR and SMART technology exists.",
+      "expected_sources": [
+        "DOC-029"
+      ],
+      "score": {
+        "factual_accuracy": 0.3880597014925373,
+        "citation_quality": 0.4,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6940298507462687,
+        "semantic_similarity": 0.6155739426612854
+      }
+    },
+    {
+      "eval_id": "EVAL-015",
+      "question": "How is AI being used to address health equity and bias in clinical algorithms?",
+      "answer": "Proving return on investment remains the critical challenge for healthcare AI adoption. [Citation: DOC-048] This systematic review analyzed 234 studies published between 2019 and 2025 that evaluated bias in healthcare AI systems. [Citation: DOC-019] As healthcare AI proliferates, the need for actionable ethical frameworks has become urgent. [Citation: DOC-047] the most-funded healthcare AI segments were: AI drug discovery ($2.3B), clinical decision support/ambient AI ($1.8B), medical imaging AI ($0.9B), and operational AI ($0.7B). [Citation: DOC-037] Healthcare AI regulation is diverging globally, creating challenges for companies operating across markets. [Citation: DOC-021]",
+      "expected_answer": "Multiple approaches: (1) DermEquity dataset (218K images balanced across 6 Fitzpatrick types) improved melanoma sensitivity in darker skin from 77% to 91% \u2014 data diversity, not model architecture, was the key driver (DOC-005). (2) GenomeFM improved cross-ancestry genetic risk prediction from C-index 0.57 to 0.72 for African populations (DOC-008). (3) SDOH-enriched models improved readmission prediction most in disadvantaged populations (+12 points) (DOC-041). (4) Bias audits: diverse development teams (30%+ underrepresented) had 50% fewer bias incidents (DOC-019). Minimum recommendation: 15% representation per demographic subgroup in training data.",
+      "expected_sources": [
+        "DOC-005",
+        "DOC-008",
+        "DOC-019",
+        "DOC-041"
+      ],
+      "score": {
+        "factual_accuracy": 0.1375,
+        "citation_quality": 0.22222222222222224,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.56875,
+        "semantic_similarity": 0.2527942657470703
+      }
+    },
+    {
+      "eval_id": "EVAL-016",
+      "question": "What role is AI playing in pandemic preparedness and disease surveillance?",
+      "answer": "The COVID-19 pandemic exposed critical gaps in global disease surveillance. [Citation: DOC-040] Climate change is increasingly recognized as a health emergency, and AI is being deployed to model, predict, and mitigate its health impacts. [Citation: DOC-054] sepsis risk scores, while BioMedomics uses AI to interpret rapid blood tests for infection differentiation. [Citation: DOC-043] Hospital-acquired infections (HAIs) affect 1 in 31 hospital patients in the US, causing approximately 99,000 deaths and $33 billion in excess costs annually. [Citation: DOC-053]",
+      "expected_answer": "Key systems: BlueDot (detected COVID-19 Dec 30, 2019 before WHO, monitors 150 diseases/150 countries), GISAID + EVEscape (predicts immune escape mutations 2-4 weeks ahead), Nucleic Acid Observatory (wastewater metagenomic sequencing, detected novel avian flu 3 weeks before clinical cases), WHO EPIWATCH (scans 100K+ sources daily in 50 languages). NLP on social media predicts flu rates 1-2 weeks early (0.92 correlation with CDC data). Challenges: geopolitical data-sharing barriers, 60-70% specificity causing alert fatigue, slow translation of warnings to action.",
+      "expected_sources": [
+        "DOC-040",
+        "DOC-056"
+      ],
+      "score": {
+        "factual_accuracy": 0.08108108108108109,
+        "citation_quality": 0.3333333333333333,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5405405405405406,
+        "semantic_similarity": 0.6109931468963623
+      }
+    },
+    {
+      "eval_id": "EVAL-017",
+      "question": "What is the total healthcare AI market size and how is venture funding distributed across categories?",
+      "answer": "Digital health venture funding reached $14.7 billion in 2025, a 23% increase from 2024's $11.9 billion but still below the 2021 peak of $29.2 billion. [Citation: DOC-037] and agency costs), clinical trial matching (ROI 4:1 from accelerated enrollment for pharma partners), and patient flow optimization (ROI 2:1 from reduced ED boarding and increased throughput). [Citation: DOC-048] The Indian government's eSanjeevani telemedicine platform has handled 170+ million teleconsultations and is integrating AI triage. [Citation: DOC-039] Big tech companies have divergent strategies for healthcare AI, driven by their existing assets and competitive positioning. [Citation: DOC-038] Generative AI is reshaping how pharmaceutical companies approach de novo molecule design. [Citation: DOC-007]",
+      "expected_answer": "Global healthcare AI market: $26B in 2025, projected $187B by 2030. Digital health VC funding: $14.7B in 2025 (up 23% from 2024). Healthcare AI captured $6.8B (46% of total). By category: AI drug discovery $2.3B, clinical decision support/ambient AI $1.8B, medical imaging AI $0.9B, operational AI $0.7B. Largest 2025 rounds: Recursion ($300M), Abridge ($250M), Rad AI ($150M). Tempus IPO at $6.1B. 'AI wrapper' fatigue emerged in H2 2025 with Series A valuations declining from $45M to $32M.",
+      "expected_sources": [
+        "DOC-037",
+        "DOC-021"
+      ],
+      "score": {
+        "factual_accuracy": 0.25757575757575757,
+        "citation_quality": 0.28571428571428575,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6287878787878788,
+        "semantic_similarity": 0.7228986024856567
+      }
+    },
+    {
+      "eval_id": "EVAL-018",
+      "question": "How do wearable devices use AI for health monitoring, and what regulatory challenges exist?",
+      "answer": "(detecting onset of respiratory infections 2.5 days before symptoms with 72% accuracy). [Citation: DOC-025] Direct-to-consumer (DTC) health AI apps have exploded, with over 350,000 health-related apps available on the Apple App Store and Google Play as of 2025. [Citation: DOC-060] (NLP for clinical text), and Amazon Clinic (virtual care, shuttered in 2024 and pivoted to B2B). [Citation: DOC-038] Nurses, who represent the largest healthcare workforce segment (4.7 million RNs in the US), are both key beneficiaries and stakeholders in healthcare AI deployment. [Citation: DOC-059] monitor hand hygiene compliance (detecting whether healthcare workers use hand sanitizer or wash hands at room entry/exit). [Citation: DOC-053]",
+      "expected_answer": "Key 2025 developments: Apple Watch Series 11 (non-invasive glucose estimation, not FDA-cleared), Samsung Galaxy Ring (FDA-cleared AFib detection, 97% sensitivity/93% specificity), Oura Ring Gen 4 (illness prediction 2.5 days before symptoms, 72% accuracy). AI-RPM reduces hospital readmissions by 22-38% for heart failure, 15-25% for COPD. Key challenge: blurring line between 'wellness' devices (no FDA oversight) and 'clinical' devices (510(k) required). A single patient generates 200+ data points daily, creating data overload for clinical teams.",
+      "expected_sources": [
+        "DOC-025"
+      ],
+      "score": {
+        "factual_accuracy": 0.2054794520547945,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.6027397260273972,
+        "semantic_similarity": 0.5886367559432983
+      }
+    },
+    {
+      "eval_id": "EVAL-019",
+      "question": "What ethical frameworks exist for healthcare AI, and how mature are health systems in implementing them?",
+      "answer": "care and retain the right to opt out. [Citation: DOC-047] Developing AI for pediatric populations presents unique challenges that are often overlooked in the adult-centric healthcare AI landscape. [Citation: DOC-055] safety reviews and that all training data be approved by healthcare authorities. [Citation: DOC-021] We are partnering with HCA Healthcare and Apollo Hospitals to pilot MedGemini-Rad in routine clinical workflows starting Q1 2026. [Citation: DOC-004] Direct-to-consumer (DTC) health AI apps have exploded, with over 350,000 health-related apps available on the Apple App Store and Google Play as of 2025. [Citation: DOC-060]",
+      "expected_answer": "A unified 7-principle framework proposed: clinical beneficence, non-maleficence, autonomy preservation, justice/equity, transparency, accountability, privacy/data stewardship. Maturity model: Level 1 (ad hoc) \u2014 72% of US health systems; Level 2 (managed) \u2014 18%; Level 3 (defined) \u2014 8%; Level 4 (optimized, with real-time bias monitoring) \u2014 fewer than 2%. Key gaps: regulatory mandates for bias testing are the most effective lever but voluntary commitments have limited impact.",
+      "expected_sources": [
+        "DOC-047"
+      ],
+      "score": {
+        "factual_accuracy": 0.14516129032258066,
+        "citation_quality": 0.33333333333333337,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5725806451612904,
+        "semantic_similarity": 0.4082338511943817
+      }
+    },
+    {
+      "eval_id": "EVAL-020",
+      "question": "If a health system wanted to deploy AI with the highest ROI in the shortest time, what should they start with and why?",
+      "answer": "and agency costs), clinical trial matching (ROI 4:1 from accelerated enrollment for pharma partners), and patient flow optimization (ROI 2:1 from reduced ED boarding and increased throughput). [Citation: DOC-048] a maturity model for healthcare organizations deploying AI: Level 1 (Ad hoc \u2014 individual departments experimenting), Level 2 (Managed \u2014 centralized AI governance committee), Level 3 (Defined \u2014 standardized validation, procurement, and monitoring processes), Level 4 (Optimized \u2014 continuous learning systems with real-time bias monitoring and automated performance alerts). [Citation: DOC-047] Digital health venture funding reached $14.7 billion in 2025, a 23% increase from 2024's $11.9 billion but still below the 2021 peak of $29.2 billion. [Citation: DOC-037] birth weight infants. [Citation: DOC-032] Developing AI for pediatric populations presents unique challenges that are often overlooked in the adult-centric healthcare AI landscape. [Citation: DOC-055]",
+      "expected_answer": "Start with 'quick win' use cases (positive ROI within 6 months): (1) Ambient AI scribes (3:1 ROI, 72% documentation time reduction, improves physician retention). (2) AI coding/billing (5:1 ROI, 30-40% denial reduction, 95-97% coding accuracy). (3) Radiology AI triage (2:1 ROI, workflow efficiency). These have lowest integration complexity and build institutional AI competency. Median total cost: $1.8M year one, $600K annually. Biggest failure reasons: poor change management (31%), data quality issues (27%). Hidden cost: EHR integration accounts for 40-60% of first-year costs.",
+      "expected_sources": [
+        "DOC-048",
+        "DOC-013",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "score": {
+        "factual_accuracy": 0.1506849315068493,
+        "citation_quality": 0.22222222222222224,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.5753424657534246,
+        "semantic_similarity": 0.710370659828186
+      }
+    }
+  ],
+  "averages": {
+    "factual_accuracy": 0.2224872710687865,
+    "citation_quality": 0.35626984126984124,
+    "reasoning_clarity": 0.9625,
+    "completeness": 0.5924936355343932,
+    "semantic_similarity": 0.5594097569584846
+  }
+}

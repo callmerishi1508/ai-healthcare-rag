@@ -28,8 +28,8 @@ def detokenize(tokens):
 
 
 def chunk_docs(docs):
-    chunk_size = 600
-    chunk_overlap = 100
+    chunk_size = 700
+    chunk_overlap = 150
 
     chunks, metadata = [], []
 
