@@ -1,0 +1,115 @@
+import json
+
+questions = [
+    {
+        "eval_id": "EVAL-001",
+        "question": "What percentage of healthcare organisations had implemented domain-specific AI tools as of 2025, and how does this compare to the broader enterprise market?",
+        "expected_answer": "22% vs 9% 22% of healthcare organisations deployed domain-specific AI tools — a 7× increase over 2024 (from ~3%) and 10× over 2023. Health systems lead at 27%, outpatient providers 18%, payers 14%. Across the broader economy, fewer than 1 in 10 companies (9%) had implemented any AI, and most relied on general tools like enterprise ChatGPT rather than purpose-built solutions. Note: the 22% measures domain-specific healthcare AI; the 9% measures any AI broadly — the comparison is directionally valid but not definitionally equivalent.",
+        "source_docs": ["DOC-001", "DOC-004"],
+        "difficulty": "easy",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-002",
+        "question": "In a Fall 2024 survey of 43 US non-profit health systems, which AI use case was the only one with 100% adoption activity, and what success rate did respondents report for it?",
+        "expected_answer": "Ambient Notes / 53% Ambient Notes — AI-generated clinical documentation — was the only use case with 100% of respondents reporting adoption activity (developing, piloting, or deploying). 53% reported a high degree of success with it. By contrast, imaging and radiology had 90% deployment but only 19%.",
+        "source_docs": ["DOC-004"],
+        "difficulty": "easy",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-003",
+        "question": "What share of clinical questions did the agentic system ChatRWD answer usefully, compared to standard large language models such as ChatGPT and Gemini?",
+        "expected_answer": "58% (agentic) vs 2–10% (LLMs) In a 50-question evaluation by nine independent physicians, ChatRWD — an agentic system using a causal inference engine and real-world data pipeline — answered 58% of clinical questions with relevant, evidence-based responses. Standard LLMs (ChatGPT-4, Claude 3 Opus, Gemini 1.5 Pro) answered only 2–10%. The RAG-based comparator, OpenEvidence, scored 24%. Architecture note: this study validates agentic approaches over standalone RAG for novel clinical questions where no pre-existing literature exists.",
+        "source_docs": ["DOC-009"],
+        "difficulty": "easy",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-004",
+        "question": "How many FDA-cleared AI/ML-enabled medical devices existed in the United States by mid-2024, and which clinical specialty accounts for the largest share of those approvals?",
+        "expected_answer": "~950 total / Radiology 76% Approximately 950 AI/ML medical devices had been cleared by the FDA by August 2024, up from under 400 cumulative by end-2020. Radiology dominates, accounting for 723 of those 950 devices (76%) — far exceeding cardiovascular (~10%) and neurology (~4%). By end-2024 the cumulative total reached 1,016 with 769 radiology-specific; by end-2025, 1,451 total with ~1,104 radiology-specific (still ~76%).",
+        "source_docs": ["DOC-010", "DOC-015"],
+        "difficulty": "easy",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-005",
+        "question": "What Phase II milestone did Insilico Medicine reach with its AI-designed drug ISM001-055 (Rentosertib), what disease does it target, and what company merger in the same period reshaped the AI drug discovery competitive landscape?",
+        "expected_answer": "Phase IIa · IPF · Recursion–Exscientia Insilico reported positive Phase IIa results for ISM001-055 (now branded Rentosertib), a TNIK kinase inhibitor for idiopathic pulmonary fibrosis (IPF) — one of the first AI-designed molecules to reach clinical proof-of-concept, published in Nature Medicine June 2025. The 71-patient, 21-site China trial showed dose-dependent improvement in forced vital capacity (FVC). The Recursion–Exscientia merger (completed November 20, 2024) combined Recursion's scaled biology exploration with Exscientia's precision chemistry and automated synthesis. Both \"ISM001-055\" and \"Rentosertib\" are correct names.",
+        "source_docs": ["DOC-011", "DOC-012", "DOC-013"],
+        "difficulty": "medium",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-006",
+        "question": "A 2025 PLOS Digital Health paper identifies five critical ethical concerns in clinical AI integration. What are they, and which concern does the paper call out as most likely to worsen existing healthcare inequities?",
+        "expected_answer": "Justice · Transparency · Consent · Accountability · Equity The five concerns are: (1) justice and fairness, (2) transparency, (3) patient consent and confidentiality, (4) accountability, and (5) patient-centred and equitable care. Algorithmic bias — caused by non-representative training datasets and opaque model development — is identified as most likely to worsen existing healthcare inequities.",
+        "source_docs": ["DOC-016", "DOC-017"],
+        "difficulty": "medium",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-007",
+        "question": "The Hastings Center identifies a specific behavioural tendency of large language models that makes them unsuitable as standalone therapists. What is it, and why does it pose a particular risk in mental health contexts?",
+        "expected_answer": "Sycophancy",
+        "source_docs": ["DOC-019"],
+        "difficulty": "medium",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-008",
+        "question": "A 2024 cross-sectional study of FDA-cleared AI devices found a critical gap in demographic reporting. What specific data was missing from the vast majority of device submissions, and what percentage of devices reported race/ethnicity data?",
+        "expected_answer": "Race/ethnicity / 0% A 2024 cross-sectional study of 1,016 FDA-cleared AI/ML-enabled medical devices found that 0% reported race/ethnicity data in their validation studies, despite FDA guidance requiring demographic reporting. Age and sex were reported in 23% and 31% of submissions, respectively. The study concluded that most AI devices are validated on non-representative populations, increasing bias risk.",
+        "source_docs": ["DOC-015", "DOC-017"],
+        "difficulty": "medium",
+        "reasoning_type": "factual_retrieval"
+    },
+    {
+        "eval_id": "EVAL-009",
+        "question": "Imaging AI has high deployment rates across US health systems but only 19% of deployers report high success. Using what you know about FDA validation gaps and algorithmic bias literature, construct the most likely causal explanation for this gap.",
+        "expected_answer": "Bias from non-representative training data Imaging AI deployment is high (90% in Fall 2024 survey) but success low (19%) because FDA-cleared devices are validated on non-representative populations (0% report race/ethnicity data). Algorithmic bias literature shows models trained on biased data perform worse on diverse real-world populations, leading to lower perceived success despite regulatory approval.",
+        "source_docs": ["DOC-004", "DOC-015"],
+        "difficulty": "hard",
+        "reasoning_type": "evidence_synthesis"
+    },
+    {
+        "eval_id": "EVAL-010",
+        "question": "Two frameworks for governing post-deployment AI in healthcare propose different monitoring mechanisms. One focuses on operationalised clinic-level audit steps; the other calls for adaptive regulatory oversight replacing pre-market review. Which framework is which, and what are the key differences?",
+        "expected_answer": "Clinic-level: Hastings Center / Regulatory: PLOS The Hastings Center proposes operationalised clinic-level audit steps for post-deployment monitoring, emphasizing local accountability. The PLOS Digital Health framework calls for adaptive regulatory oversight replacing pre-market review, focusing on continuous evaluation. Key difference: clinic-level is decentralized and practitioner-driven; regulatory is centralized and authority-driven.",
+        "source_docs": ["DOC-016", "DOC-018"],
+        "difficulty": "hard",
+        "reasoning_type": "evidence_synthesis"
+    },
+    {
+        "eval_id": "EVAL-011",
+        "question": "On March 18 2026, mental health care providers at Kaiser Permanente went on strike. How many workers participated, what specific triage headcount change at one facility triggered the action, and what UK AI company was KP confirmed to be evaluating?",
+        "expected_answer": "1,500 workers / Triage headcount cut from 3 to 1 / Limbic Kaiser Permanente's 1,500 mental health care providers struck on March 18 2026 over AI implementation. The trigger was a triage headcount reduction from 3 to 1 at one facility, increasing provider workload. KP was evaluating Limbic, a UK AI company specializing in mental health chatbots.",
+        "source_docs": ["DOC-021"],
+        "difficulty": "live",
+        "reasoning_type": "factual_retrieval"
+    }
+]
+
+data = {
+    "metadata": {
+        "eval_name": "AI in Healthcare — Evaluation Questions",
+        "version": "3.0",
+        "total_questions": len(questions),
+        "difficulty_distribution": {},
+        "reasoning_types": {},
+        "scoring_rubric": {
+            "factual_accuracy": "Does the answer contain the correct facts from source documents? (0-3 points)",
+            "citation_quality": "Does every claim cite a specific DOC-ID? Are citations correct? (0-3 points)",
+            "reasoning_trace": "Is the chain-of-thought visible and coherent? (0-2 points)",
+            "completeness": "Does the answer address all parts of the question? (0-2 points)",
+            "total": "10 points per question, 110 points maximum"
+        }
+    },
+    "questions": questions
+}
+
+with open("eval_set_v3.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2)
+
+print(f"Created eval set with {len(questions)} questions")

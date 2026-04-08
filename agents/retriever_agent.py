@@ -12,18 +12,28 @@ class RetrieverAgent:
         root = Path(__file__).resolve().parents[1]
         index_path = root / "index.faiss"
         metadata_path = root / "metadata.json"
+        kb_path = root / "knowledge_base_ai_healthcare.json"
 
-        if not index_path.exists() or not metadata_path.exists():
-            from indexing.build_index import build_index
+        if not index_path.exists() or not metadata_path.exists() or not kb_path.exists():
+            from indexing.build_index_new import main as build_index
             build_index()
 
         self.index = faiss.read_index(str(index_path))
         with open(metadata_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            self.metadata = json.load(f)
 
-        self.chunks = data["chunks"]
-        self.metadata = data["meta"]
-        self.tokenized_chunks = data.get("tokenized_chunks") or [self._tokenize(chunk) for chunk in self.chunks]
+        with open(kb_path, "r", encoding="utf-8") as f:
+            kb = json.load(f)
+        self.documents = kb["documents"]
+
+        # Build chunks and tokenized
+        self.chunks = []
+        self.chunk_to_doc = []
+        for doc in self.documents:
+            self.chunks.append(doc["text"])
+            self.chunk_to_doc.append(doc["doc_id"])
+
+        self.tokenized_chunks = [self._tokenize(chunk) for chunk in self.chunks]
         self.bm25 = BM25Okapi(self.tokenized_chunks)
         self.model = SentenceTransformer("all-MiniLM-L6-v2")
 
@@ -50,6 +60,25 @@ class RetrieverAgent:
         return [query.strip()]
 
     def retrieve(self, query, k=5):
+        if self.is_complex(query):
+            subqueries = self.decompose_query(query)
+            all_results = []
+            for subq in subqueries:
+                results = self._retrieve_single(subq, k)
+                all_results.extend(results)
+            # Deduplicate and rerank
+            seen_texts = set()
+            unique_results = []
+            for res in all_results:
+                if res["text"] not in seen_texts:
+                    unique_results.append(res)
+                    seen_texts.add(res["text"])
+            unique_results.sort(key=lambda x: x["score"], reverse=True)
+            return unique_results[:k]
+        else:
+            return self._retrieve_single(query, k)
+
+    def _retrieve_single(self, query, k=5):
         query_tokens = self._tokenize(query)
         dense_embedding = self.model.encode([query]).astype(np.float32)
         dense_scores, dense_indices = self.index.search(dense_embedding, k)
@@ -77,9 +106,10 @@ class RetrieverAgent:
             if idx < 0 or idx >= len(self.chunks):
                 continue
             score = combined.get(idx, 0.0)
+            meta = self.metadata[idx]
             results.append({
                 "text": self.chunks[idx],
-                "meta": self.metadata[idx],
+                "meta": meta,
                 "score": float(score)
             })
 

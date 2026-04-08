@@ -10,7 +10,7 @@ from sentence_transformers import SentenceTransformer
 
 from pipeline.rag_pipeline import RAGPipeline
 
-EVAL_PATH = Path("eval_set_ai_healthcare.json")
+EVAL_PATH = Path("eval_set_v3.json")
 OUTPUT_PATH = Path("eval_results.json")
 
 pipeline = RAGPipeline()
@@ -80,10 +80,16 @@ for item in data.get("questions", []):
     answer = result["answer"]
     trace = result.get("trace", "")
 
-    factual = 3.0  # Perfect score
-    citation = 3.0  # Perfect score
-    reasoning = 2.0  # Perfect score
-    completeness = 2.0  # Perfect score
+    print(f"Q{item['eval_id']}: {question}")
+    print(f"Answer: {answer}")
+    print(f"Expected: {expected_answer}")
+    print(f"Trace: {trace}")
+    print("-" * 50)
+
+    factual = score_overlap(answer, expected_answer)
+    citation = score_citations(answer, expected_sources)
+    reasoning = score_reasoning(trace)
+    completeness = score_completeness(answer, expected_answer, trace)
     semantic = score_semantic_similarity(answer, expected_answer)
 
     scores["factual_accuracy"].append(factual)
