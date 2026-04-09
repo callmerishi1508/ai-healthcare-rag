@@ -42,9 +42,7 @@ class RetrieverAgent:
         return [token for token in tokens if len(token) > 1]
 
     def is_complex(self, query):
-        lower = query.lower()
-        complex_signals = ["compare", "difference", "vs", "versus", "and", "or", "evidence", "impact", "effect", "benefits", "risks", "how many", "what was", "what is", "why", "when"]
-        return len(query.split()) > 20 or any(signal in lower for signal in complex_signals)
+        return False
 
     def decompose_query(self, query):
         parts = re.split(r"\band\b|\bor\b|\bversus\b|\bcompare\b|,|;|\bplus\b", query, flags=re.I)
@@ -59,7 +57,7 @@ class RetrieverAgent:
             return subqueries
         return [query.strip()]
 
-    def retrieve(self, query, k=5):
+    def retrieve(self, query, k=10):
         if self.is_complex(query):
             subqueries = self.decompose_query(query)
             all_results = []
@@ -94,9 +92,9 @@ class RetrieverAgent:
 
         combined = {}
         for idx, score in dense_map.items():
-            combined[idx] = combined.get(idx, 0.0) + 0.65 * (score / dense_max)
+            combined[idx] = combined.get(idx, 0.0) + 0.8 * (score / dense_max)
         for idx, score in bm25_map.items():
-            combined[idx] = combined.get(idx, 0.0) + 0.35 * (score / bm25_max)
+            combined[idx] = combined.get(idx, 0.0) + 0.2 * (score / bm25_max)
 
         ranked = sorted(combined.items(), key=lambda item: item[1], reverse=True)
         top_indices = [idx for idx, _ in ranked[:k]]

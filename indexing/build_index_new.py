@@ -135,7 +135,7 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
-def chunk_text(text, chunk_size=500, overlap=50):
+def chunk_text(text, chunk_size=1000, overlap=200):
     enc = tiktoken.get_encoding("cl100k_base")  # GPT-4 encoding
     tokens = enc.encode(text)
     chunks = []
