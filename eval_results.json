@@ -3,56 +3,56 @@
     {
       "eval_id": "EVAL-001",
       "question": "What percentage of healthcare organisations had implemented domain-specific AI tools as of 2025, and how does this compare to the broader enterprise market?",
-      "answer": "Morgan Healthcare Conference in San Francisco. [Citation: DOC-003] technology vendors, policy makers, and organizational decision makers. [Citation: DOC-004] 2022) now have multiple AI tools (10 by 2025 ([11])), reflecting expanding use cases. [Citation: DOC-010] PREMIUM INSIGHTS 4 MARKET OVERVIEW Captures industry movement, adoption patterns, and strategic signals across key end-use segments and regions. [Citation: DOC-005] ARE MARKET FOR CONTEXT-AWARE COMPUTING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 798 REST OF THE MIDDLE EAST & AFRICA: AI IN HEALTHCARE MARKET, BY END USER, 2023\u20132030 (USD MILLION) TABLE 799 REST OF THE MIDDLE EAST & AFRICA: AI IN HEALTHCARE MARKET FOR HEALTHCARE PROVIDERS, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 800 REST OF THE MIDDLE EAST & AFRICA: AI IN HEALTHCARE MARKET FOR HEALTHCARE PAYERS, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 801 OVERVIEW OF STRATEGIES ADOPTED BY KEY PLAYERS IN AI IN HEALTHCARE MARKET, JANUARY 2021\u2013APRIL 2025 TABLE 802 AI IN HEALTHCARE MARKET SHARE ANALYSIS, 2024 TABLE 803 AI IN HEALTHCARE MARKET: REGIONAL FOOTPRINT, 2024 TABLE 804 AI IN HEALTHCARE MARKET: APPLICATION FOOTPRINT, 2024 TABLE 805 AI IN HEALTHCARE MARKET: TOOL FOOTPRINT, 2024 TABLE 806 AI IN HEALTHCARE MARKET: FUNCTION FOOTPRINT, 2024 TABLE 807 AI IN HEALTHCARE MARKET: OFFERING FOOTPRINT, 2024 TABLE 808 AI IN HEALTHCARE MARKET: DEPLOYMENT FOOTPRINT, 2024 TABLE 809 AI IN HEALTHCARE MARKET: END-USER FOOTPRINT, 2024 TABLE 810 AI IN HEALTHCARE MARKET: DETAILED LIST OF KEY STARTUP/SME PLAYERS, 2024 TABLE 811 AI IN HEALTHCARE MARKET: APPLICATION AND REGIONAL FOOTPRINT (STARTUPS/SMES), 2024 TABLE 812 AI IN HEALTHCARE MARKET: PRODUCT LAUNCHES, JANUARY 2021\u2013APRIL 2025 TABLE 813 AI IN HEALTHCARE MARKET: DEALS, JANUARY 2021\u2013APRIL 2025 TABLE 814 AI IN HEALTHCARE MARKET: OTHER DEVELOPMENTS, JANUARY 2021\u2013APRIL 2025 TABLE 815 KONINKLIJKE PHILIPS N.V.: COMPANY OVERVIEW TABLE 816 KONINKLIJKE PH [Citation: DOC-006]",
+      "answer": "Insurers and hospital leaders are watching cost-benefit closely; large systems (Kaiser/Geisinger/etc.) have their own AI R&D labs, betting on long-term gains. [Citation: DOC-010] to essential healthcare services, artificial intelligence could help bridge that gap. [Citation: DOC-007] and strategic signals across key end-use segments and regions. [Citation: DOC-005] IDDLE EAST & AFRICA MACROECONOMIC OUTLOOK FOR MIDDLE EAST & AFRICA GCC COUNTRIES - AI-driven innovations and rise in healthcare investments to propel market growth REST OF THE MIDDLE EAST & AFRICA COMPETITIVE LANDSCAPE 574 14.1 INTRODUCTION 14.2 KEY PLAYER STRATEGY/RIGHT TO WIN OVERVIEW OF STRATEGIES ADOPTED BY KEY PLAYERS IN AI IN HEALTHCARE MARKET 14.3 REVENUE ANALYSIS, 2020\u20132024 14.4 MARKET SHARE ANALYSIS, 2024 RANKING OF KEY MARKET PLAYERS 14.5 COMPANY EVALUATION MATRIX: KEY PLAYERS, 2024 STARS EMERGING LEADERS PERVASIVE PLAYERS PARTICIPANTS COMPANY FOOTPRINT: KEY PLAYERS, 2024 - Company footprint - Regional footprint - Application footprint - Tool footprint - Function footprint - Offering footprint - Deployment footprint - End-user footprint 14.6 COMPANY EVALUATION MATRIX: STARTUPS/SMES, 2024 PROGRESSIVE COMPANIES RESPONSIVE COMPANIES DYNAMIC COMPANIES STARTING BLOCKS COMPETITIVE BENCHMARKING: STARTUPS/SMES, 2024 - Detailed list of key startups/SMEs - Company footprint (startups/SMEs) 14.7 COMPANY VALUATION AND FINANCIAL METRICS FINANCIAL METRICS COMPANY VALUATION 14.8 BRAND/PRODUCT COMPARISON 14.9 COMPETITIVE SCENARIO PRODUCT LAUNCHES DEALS OTHER DEVELOPMENTS COMPANY PROFILES 603 15.1 KEY PLAYERS KONINKLIJKE PHILIPS N.V. [Citation: DOC-006] To fully realize the promise of AI for improving healthcare delivery, we must continue to explore and collaborate as we traverse this revolutionary terrain [ 1 , 4 ]. [Citation: DOC-020]",
       "expected_answer": "22% vs 9% 22% of healthcare organisations deployed domain-specific AI tools \u2014 a 7\u00d7 increase over 2024 (from ~3%) and 10\u00d7 over 2023. Health systems lead at 27%, outpatient providers 18%, payers 14%. Across the broader economy, fewer than 1 in 10 companies (9%) had implemented any AI, and most relied on general tools like enterprise ChatGPT rather than purpose-built solutions. Note: the 22% measures domain-specific healthcare AI; the 9% measures any AI broadly \u2014 the comparison is directionally valid but not definitionally equivalent.",
       "expected_sources": [
         "DOC-001",
         "DOC-004"
       ],
       "score": {
-        "factual_accuracy": 0.2,
-        "citation_quality": 0.28571428571428575,
+        "factual_accuracy": 0.26153846153846155,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.8331732749938965,
-        "semantic_similarity": 0.666346549987793
+        "completeness": 0.8165034651756287,
+        "semantic_similarity": 0.6330069303512573
       }
     },
     {
       "eval_id": "EVAL-002",
       "question": "In a Fall 2024 survey of 43 US non-profit health systems, which AI use case was the only one with 100% adoption activity, and what success rate did respondents report for it?",
-      "answer": "There was no statistically significant difference between survey respondents versus non-respondents, except a higher proportion of our respondents had an NPR between $5B and $9.9B compared to non-respondents. [Citation: DOC-004] 44]), which may prompt tighter rules or definitions. [Citation: DOC-010] examined by market size trends and offering end users and applications. [Citation: DOC-003] a third-party provider experiences a technical issue, which may be an unacceptable risk.In addition to the audit of the LLM, healthcare systems and researchers may want to test how physicians fare in the task presented to the LLM. [Citation: DOC-017] FDA Review Panel Radiology Devices 125 (74.4%) Cardiovascular Devices 11 (6.5%) Neurology Devices 10 (6.0%) Anesthesiology Devices 5 (3.0%) Gastroenterology\u2013Urology 5 (3.0%) Dental 3 (1.8%) General and Plastic Surgery 2 (1.2%) General Hospital 2 (1.2%) Ophthalmic 2 (1.2%) Other\\\u2020\u2020 3 (1.8%) Review Time, days\\\u2021 Median (IQR) 162 (106\u2013230) Range 23 to 887 Developer Country Outside the United States 97 (57.7%) United States 71 (42.3%) Pediatric Indication Indicated for pediatric use 30 (17.9%) Not indicated 138 (82.1%) Cybersecurity Mentioned Yes 91 (54.2%) No 77 (45.8%) PCCP Mentioned Yes 28 (16.7%) No 140 (83.3%) SaMD Yes 46 (27.4%) No 122 (72.6%) Open in a new tab \\\u2021 Calculated using dates of submission and decision as listed in the FDA database. [Citation: DOC-015]",
+      "answer": "-profit health systems in accomplishing quality improvement, organizational efficiency, patient safety and transformation through information technology. [Citation: DOC-004] %20AI%20is%20transforming%20healthcare+https%3A%2F%2Fwww.weforum.org%2Fstories%2F2025%2F08%2Fai-transforming-global-health%2F) ![Image 71: World Economic Forum logo](http://www.weforum.org/a-weekly-logo.svg) ## Forum Stories newsletter Bringing you weekly curated insights and analysis on the global issues that matter. [Citation: DOC-007] See the competitors, opportunities, and growth signals shaping it - instantly. [Citation: DOC-006] Services We Will Customise The Research For You, In Case The Report Listed Above Does Not Meet With Your Requirements Get 10% Free Customisation Growth opportunities and latent adjacency in AI Agents in Healthcare Market POST COMMENT \u00d7 Still Researching the AI Agents in Healthcare Ecosystem? [Citation: DOC-005]",
       "expected_answer": "Ambient Notes / 53% Ambient Notes \u2014 AI-generated clinical documentation \u2014 was the only use case with 100% of respondents reporting adoption activity (developing, piloting, or deploying). 53% reported a high degree of success with it. By contrast, imaging and radiology had 90% deployment but only 19%.",
       "expected_sources": [
         "DOC-004"
       ],
       "score": {
-        "factual_accuracy": 0.28205128205128205,
-        "citation_quality": 0.33333333333333337,
+        "factual_accuracy": 0.1794871794871795,
+        "citation_quality": 0.4,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7531105875968933,
-        "semantic_similarity": 0.5062211751937866
+        "completeness": 0.7024188935756683,
+        "semantic_similarity": 0.40483778715133667
       }
     },
     {
       "eval_id": "EVAL-003",
       "question": "What share of clinical questions did the agentic system ChatRWD answer usefully, compared to standard large language models such as ChatGPT and Gemini?",
-      "answer": "7 PATIENT ENGAGEMENT REMOTE MONITORING 9.7.1 SYMPTOM MANAGEMENT & VIRTUAL ASSISTANCE 9.7.2 TELEHEALTH & REMOTE PATIENT MONITORING 9.7.3 MEDICATION MANAGEMENT 9.8 PHARMACY MANAGEMENT 10 AI AGENTS IN HEALTHCARE MARKET, BY OFFERING (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 10.1 INTRODUCTION 10.2 SINGLE AGENT SYSTEM 10.3 MULTI-AGENT SYSTEM 11 AI AGENTS IN HEALTHCARE MARKET, BY AGENT ARCHITECTURE (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 11.1 INTRODUCTION 11.2 RULE-BASED AGENTS 11.3 PATTERN RECOGNITION AGENTS 11.4 CONTEXTUAL AI AGENTS 11.5 CONVERSATIONAL AGENTS 11.6 ANALYTICAL AGENTS 11.7 MULTI-AGENT ARCHITECTURE 12 AI AGENTS IN HEALTHCARE MARKET, BY APPLICATION (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 12.1 INTRODUCTION 12.2 CLINICAL APPLICATIONS 12.3 NON-CLINICAL APPLICATIONS 13 AI AGENTS IN HEALTHCARE MARKET, BY END USER (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 13.1 INTRODUCTION 13.2 HEALTHCARE PROVIDERS 13.2.1.1 HOSPITALS & CLINICS 13.2.1.2 AMBULATORY CARE CENTERS 13.2.1.3 DIAGNOSTIC & IMAGING CENTERS 13.2.1.4 PHARMACIES 13.2.2 HEALTHCARE PAYERS 13.2.2.1 PUBLIC PAYERS 13.2.2.2 PRIVATE PAYERS 13.3 GOVERNMENT & PUBLIC HEALTH AGENCIES 13.3.1 AI AGENTS IN HEALTHCARE MARKET, BY REGION (MARKET SIZE & FORECAST TO 2030) 13.4 INTRODUCTION 13.5 NORTH AMERICA 13.5.1 US 13.5.2 [Citation: DOC-005] artificial intelligence for health equity Article Open access 12 September 2023 IntroductionThe widespread adoption of large language models (LLMs) has revealed significant challenges found in clinical settings, particularly around accuracy, bias, and patient privacy1. [Citation: DOC-017] ificial-intelligence-ai-pilot-studies-taking-place-in-an-nhs-trust/ 69.Mennella C., Maniscalco U., De Pietro G., Esposito M. [Citation: DOC-018] the right level of care,\" says Khalsa. [Citation: DOC-021] S., Alsuhebany N., et al., \u201cRevolutionizing Healthcare: The Role of Artificial Intelligence in Clinical Practice,\u201d BMC Medical Education 23 (2023): 689, 10.1186/s12909-023-04698-z. [Citation: DOC-020]",
+      "answer": "in the patient-clinician relationship; clinical responsibility and oversight;****quality of care and patient safety; and regulatory and professional standards.** **Empathy, authenticity, and trust in the patient-clinician relationship.** Effective healthcare rests on trust between patients and clinicians, which may be challenged when AI systems generate patient communications without clear disclosure or sufficient clinician overview. [Citation: DOC-019] MANAGEMENT & VIRTUAL ASSISTANCE 9.7.2 TELEHEALTH & REMOTE PATIENT MONITORING 9.7.3 MEDICATION MANAGEMENT 9.8 PHARMACY MANAGEMENT 10 AI AGENTS IN HEALTHCARE MARKET, BY OFFERING (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 10.1 INTRODUCTION 10.2 SINGLE AGENT SYSTEM 10.3 MULTI-AGENT SYSTEM 11 AI AGENTS IN HEALTHCARE MARKET, BY AGENT ARCHITECTURE (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 11.1 INTRODUCTION 11.2 RULE-BASED AGENTS 11.3 PATTERN RECOGNITION AGENTS 11.4 CONTEXTUAL AI AGENTS 11.5 CONVERSATIONAL AGENTS 11.6 ANALYTICAL AGENTS 11.7 MULTI-AGENT ARCHITECTURE 12 AI AGENTS IN HEALTHCARE MARKET, BY APPLICATION (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 12.1 INTRODUCTION 12.2 CLINICAL APPLICATIONS 12.3 NON-CLINICAL APPLICATIONS 13 AI AGENTS IN HEALTHCARE MARKET, BY END USER (MARKET SIZE & FORECAST TO 2030) Market Size, Volume & Forecast \u2013 USD Million 13.1 INTRODUCTION 13.2 HEALTHCARE PROVIDERS 13.2.1.1 HOSPITALS & CLINICS 13.2.1.2 AMBULATORY CARE CENTERS 13.2.1.3 DIAGNOSTIC & IMAGING CENTERS 13.2.1.4 PHARMACIES 13.2.2 HEALTHCARE PAYERS 13.2.2.1 PUBLIC PAYERS 13.2.2.2 PRIVATE PAYERS 13.3 GOVERNMENT & PUBLIC HEALTH AGENCIES 13.3.1 AI AGENTS IN HEALTHCARE MARKET, BY REGION (MARKET SIZE & FORECAST TO 2030) 13.4 INTRODUCTION 13.5 NORTH AMERICA 13.5.1 US 13.5.2 CANADA 13.6 EUROPE 13.6.1 GERMANY 13. [Citation: DOC-005] The emergence of deepfake technology: A review. [Citation: DOC-018] AI assistant that summarizes sessions, updates electronic health records, and helps individual therapists track patient progress. [Citation: DOC-021] Performance comparison of junior residents and ChatGPT in the Objective Structured Clinical Examination (OSCE) for medical history taking and documentation of medical records: development and usability study. [Citation: DOC-009]",
       "expected_answer": "58% (agentic) vs 2\u201310% (LLMs) In a 50-question evaluation by nine independent physicians, ChatRWD \u2014 an agentic system using a causal inference engine and real-world data pipeline \u2014 answered 58% of clinical questions with relevant, evidence-based responses. Standard LLMs (ChatGPT-4, Claude 3 Opus, Gemini 1.5 Pro) answered only 2\u201310%. The RAG-based comparator, OpenEvidence, scored 24%. Architecture note: this study validates agentic approaches over standalone RAG for novel clinical questions where no pre-existing literature exists.",
       "expected_sources": [
         "DOC-009"
       ],
       "score": {
-        "factual_accuracy": 0.2608695652173913,
-        "citation_quality": 0.0,
+        "factual_accuracy": 0.2753623188405797,
+        "citation_quality": 0.33333333333333337,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7245637327432632,
-        "semantic_similarity": 0.4491274654865265
+        "completeness": 0.7442213296890259,
+        "semantic_similarity": 0.48844265937805176
       }
     },
     {
       "eval_id": "EVAL-004",
       "question": "How many FDA-cleared AI/ML-enabled medical devices existed in the United States by mid-2024, and which clinical specialty accounts for the largest share of those approvals?",
-      "answer": "Emphasis on rigorous pre-launch evaluation and addressing biases ([13]) ([14]). [Citation: DOC-010] FDA Review Panel Radiology Devices 125 (74.4%) Cardiovascular Devices 11 (6.5%) Neurology Devices 10 (6.0%) Anesthesiology Devices 5 (3.0%) Gastroenterology\u2013Urology 5 (3.0%) Dental 3 (1.8%) General and Plastic Surgery 2 (1.2%) General Hospital 2 (1.2%) Ophthalmic 2 (1.2%) Other\\\u2020\u2020 3 (1.8%) Review Time, days\\\u2021 Median (IQR) 162 (106\u2013230) Range 23 to 887 Developer Country Outside the United States 97 (57.7%) United States 71 (42.3%) Pediatric Indication Indicated for pediatric use 30 (17.9%) Not indicated 138 (82.1%) Cybersecurity Mentioned Yes 91 (54.2%) No 77 (45.8%) PCCP Mentioned Yes 28 (16.7%) No 140 (83.3%) SaMD Yes 46 (27.4%) No 122 (72.6%) Open in a new tab \\\u2021 Calculated using dates of submission and decision as listed in the FDA database. [Citation: DOC-015] US: AI IN HEALTHCARE MARKET FOR SURGICAL THERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 220 US: AI IN HEALTHCARE MARKET FOR RADIATION THERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 221 US: AI IN HEALTHCARE MARKET FOR BEHAVIORAL THERAPY & PSYCHOTHERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 222 US: AI IN HEALTHCARE MARKET FOR IMMUNOTHERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 223 US: AI IN HEALTHCARE MARKET FOR PATIENT ENGAGEMENT & REMOTE MONITORING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 224 US: AI IN HEALTHCARE MARKET FOR POST-TREATMENT SURVEILLANCE & SURVIVORSHIP CARE, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 225 US: AI IN HEALTHCARE MARKET FOR PHARMACY MANAGEMENT, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 226 US: AI IN HEALTHCARE MARKET FOR ADMINISTRATIVE FUNCTIONS, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 227 US: AI IN HEALTHCARE MARKET, BY APPLICATION, 2023\u20132030 (USD MILLION) TABLE 228 US: AI IN HEALTHCARE MARKET, BY DEPLOYMENT MODEL, 2023\u20132030 (USD MILLION) TABLE 229 US: AI IN HEALTHCARE MARKET, BY TOOL, 2023\u20132030 (USD MILLION) TABLE 230 US: AI IN HEALTHCARE MARKET FOR MACHINE LEARNING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 231 US: AI IN HEALTHCARE MARKET FOR DEEP LEARNING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 232 US: AI IN HEALTHCARE MARKET FOR NATURAL LANGUAGE PROCESSING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 233 US: AI IN HEALTHCARE MARKET FOR CONTEXT-AWARE COMPUTING, BY TYPE, 2023\u20132030 (USD MILLION [Citation: DOC-006]",
+      "answer": "Back to Articles | By Adrien Laurent | Updated on 4/6/2026 | 50 min read | Next Article More Download PDF PDF AI Medical Devices: 2025 Status, Regulation & Challenges ai medical devices medical device regulation software as a medical device fda guidance eu ai act ai in healthcare algorithmic bias Executive Summary The field of AI-enabled medical devices has expanded dramatically in recent years, transforming many areas of healthcare while raising regulatory, technical, and ethical challenges. [Citation: DOC-010] The present study provides a comprehensive assessment of all AI/ML-enabled medical devices cleared or approved by the FDA during calendar year 2024. [Citation: DOC-015] sector for enhanced efficiency, accuracy, and better patient outcomes. [Citation: DOC-002] LOGICAL THERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 247 CANADA: AI IN HEALTHCARE MARKET FOR SURGICAL THERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 248 CANADA: AI IN HEALTHCARE MARKET FOR RADIATION THERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 249 CANADA: AI IN HEALTHCARE MARKET FOR BEHAVIORAL THERAPY & PSYCHOTHERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 250 CANADA: AI IN HEALTHCARE MARKET FOR IMMUNOTHERAPY, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 251 CANADA: AI IN HEALTHCARE MARKET FOR PATIENT ENGAGEMENT & REMOTE MONITORING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 252 CANADA: AI IN HEALTHCARE MARKET FOR POST-TREATMENT SURVEILLANCE & SURVIVORSHIP CARE, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 253 CANADA: AI IN HEALTHCARE MARKET FOR PHARMACY MANAGEMENT, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 254 CANADA: AI IN HEALTHCARE MARKET FOR ADMINISTRATIVE FUNCTIONS, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 255 CANADA: AI IN HEALTHCARE MARKET, BY APPLICATION, 2023\u20132030 (USD MILLION) TABLE 256 CANADA: AI IN HEALTHCARE MARKET, BY DEPLOYMENT MODEL, 2023\u20132030 (USD MILLION) TABLE 257 CANADA: AI IN HEALTHCARE MARKET, BY TOOL, 2023\u20132030 (USD MILLION) TABLE 258 CANADA: AI IN HEALTHCARE MARKET FOR MACHINE LEARNING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 259 CANADA: AI IN HEALTHCARE MARKET FOR DEEP LEARNING, BY TYPE, 2023\u20132030 (USD MILLION) TABLE 260 CANADA: AI IN HEALTHCARE MARKET FOR NATURAL LANGUAGE PROCESSING, BY TYPE, 2023\u2013203 [Citation: DOC-006]",
       "expected_answer": "~950 total / Radiology 76% Approximately 950 AI/ML medical devices had been cleared by the FDA by August 2024, up from under 400 cumulative by end-2020. Radiology dominates, accounting for 723 of those 950 devices (76%) \u2014 far exceeding cardiovascular (~10%) and neurology (~4%). By end-2024 the cumulative total reached 1,016 with 769 radiology-specific; by end-2025, 1,451 total with ~1,104 radiology-specific (still ~76%).",
       "expected_sources": [
         "DOC-010",
@@ -60,16 +60,16 @@
       ],
       "score": {
         "factual_accuracy": 0.2978723404255319,
-        "citation_quality": 0.8,
-        "reasoning_clarity": 0.75,
-        "completeness": 0.6743305623531342,
-        "semantic_similarity": 0.5986611247062683
+        "citation_quality": 0.6666666666666666,
+        "reasoning_clarity": 1.0,
+        "completeness": 0.8148354589939117,
+        "semantic_similarity": 0.6296709179878235
       }
     },
     {
       "eval_id": "EVAL-005",
       "question": "What Phase II milestone did Insilico Medicine reach with its AI-designed drug ISM001-055 (Rentosertib), what disease does it target, and what company merger in the same period reshaped the AI drug discovery competitive landscape?",
-      "answer": "Additional sources were included from the reference lists of key studies to ensure comprehensive coverage. [Citation: DOC-013] AI-driven drug target identification for therapeutic development. [Citation: DOC-014] by Saeed Hassanpour 4,* Editor: Po-Chih Kuo5 Author information Article notes Copyright and License information 1Department of Biomedical Data Science, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 2Department of Health Policy and Management, Milken Institute School of Public Health, The George Washington University, Washington, DC, United States of America 3Dartmouth Institute for Health Policy and Clinical Practice, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 4Departments of Biomedical Data Science, Computer Science, and Epidemiology, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 5National Tsing-Hua University: National Tsing Hua University, TAIWAN The authors have declared that no competing interests exist. [Citation: DOC-016] review & editing Find articles by Christy Harris Lemak 4,5, Juan C Rojas Juan C Rojas, MD, MS 6 Rush University System for Health, Chicago, IL, United States Investigation, Methodology, Writing - original draft, Writing - review & editing Find articles by Juan C Rojas 6, Janet Guptill Janet Guptill, MPH 7 Scottsdale Institute, Scottsdale, AZ, United States Conceptualization, Funding acquisition, Investigation, Resources, Writing - review & editing Find articles by Janet Guptill 7, David Classen David Classen, MD, MS 8 Division of Epidemiology, University of Utah School of Medicine, Salt Lake City, UT, United States Conceptualization, Formal analysis, Investigation, Methodology, Supervision, Writing - review & editing Find articles by David Classen 8 Author information Article notes Copyright and License information 1 Duke University Health System, Durham, NC, United States 2 Department of Medicine, Duke University School of Medicine, Durham, NC, United States 3 Department of Biostatistics and Bioinformatics, Duke University School of Medicine, Durham, NC, United States 4 Department of Health Services Administration, University of Alabama at Birmingham, Birmingham, AL, United States 5 Scottsdale Institute, Scottsdale, AZ, United States 6 Rush University System for Health, Chicago, IL, United States 7 Scottsdale Institute, Scottsdale, AZ, United States 8 Division of Epidemiology, University of Utah School of Medicine, Salt Lake City, UT, United States \u2709Corresponding author: Eric Poon, MD, MPH, Duke Health Technology Solutions, Duke University Health Systems, 2424 Erwin Road, 12/F, Durham, NC 27705, United States (eric.poon@duke.edu) Roles Eric G Poon: MD, MPH, Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Resources, Writing - original draft, Writing - review & editing Christy Harris Lemak: PhD, Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Supervision, Validation, Writing - review & editing Juan C Rojas: MD, MS, Investigation, Methodology, Writing - original draft, Writing - review & editing Janet Guptill: MPH, Conceptualization, Funding acquisition, Investigation, Resources, Writing - review & editing [Citation: DOC-004] Diagnosing systemic disorders with AI algorithms based on ocular images. [Citation: DOC-018]",
+      "answer": "chemical sciences for assessing large databases of compounds. [Citation: DOC-013] 2021%26author%3DR.%2BSrivastava%26author%3DD.%2BGlossman-Mitnik%26title%3DDensity%2BFunctional%2BTheory%2B-%2BRecent%2BAdvances%252C%2BNew%2BPerspectives%2Band%2BApplications&doi=10.1021%2Facsomega.5c00549&doiOfLink=&linkType=gs&linkLocation=Reference&linkSource=FULL_TEXT)There is no corresponding record for this reference. [Citation: DOC-012] Li H., Cao J., Grzybowski A., Jin K., Lou L., Ye J. [Citation: DOC-018] committed capital, up from just $3 billion in 2012 87 . [Citation: DOC-014] to reshape drug discovery, clinical trials, and manufacturing landscapes, driving innovation and efficiency in the industry (Buntz, B. [Citation: DOC-020]",
       "expected_answer": "Phase IIa \u00b7 IPF \u00b7 Recursion\u2013Exscientia Insilico reported positive Phase IIa results for ISM001-055 (now branded Rentosertib), a TNIK kinase inhibitor for idiopathic pulmonary fibrosis (IPF) \u2014 one of the first AI-designed molecules to reach clinical proof-of-concept, published in Nature Medicine June 2025. The 71-patient, 21-site China trial showed dose-dependent improvement in forced vital capacity (FVC). The Recursion\u2013Exscientia merger (completed November 20, 2024) combined Recursion's scaled biology exploration with Exscientia's precision chemistry and automated synthesis. Both \"ISM001-055\" and \"Rentosertib\" are correct names.",
       "expected_sources": [
         "DOC-011",
@@ -77,119 +77,119 @@
         "DOC-013"
       ],
       "score": {
-        "factual_accuracy": 0.12162162162162163,
-        "citation_quality": 0.25,
+        "factual_accuracy": 0.10810810810810811,
+        "citation_quality": 0.5,
         "reasoning_clarity": 1.0,
-        "completeness": 0.68940868973732,
-        "semantic_similarity": 0.3788173794746399
+        "completeness": 0.6764582991600037,
+        "semantic_similarity": 0.3529165983200073
       }
     },
     {
       "eval_id": "EVAL-006",
       "question": "A 2025 PLOS Digital Health paper identifies five critical ethical concerns in clinical AI integration. What are they, and which concern does the paper call out as most likely to worsen existing healthcare inequities?",
-      "answer": "ificial-intelligence-ai-pilot-studies-taking-place-in-an-nhs-trust/ 69.Mennella C., Maniscalco U., De Pietro G., Esposito M. [Citation: DOC-018] these concerns and ensure ethical use of AI. [Citation: DOC-016] 9240029200 (2021).European Commission. [Citation: DOC-014] Health Canada has not yet issued an AI-specific medical device regulation but views AI software as falling under existing SaMD guidance. [Citation: DOC-010] ensure robust interpretation of these metrics in context-specific audits, maintaining awareness of evolving standards in this emerging field.Step 4: value alignmentIn Step 1, the guiding committee discussed the ethical considerations28,29,30, potential benefits, and costs of the adoption of a new technology in clinical care processes. [Citation: DOC-017]",
+      "answer": "of an AI technology. [Citation: DOC-008] , computer science, and public health to offer a holistic analysis of AI\u2019s implications in healthcare. [Citation: DOC-018] PLOS Digit Health . [Citation: DOC-016] model errors can critically affect patient care and health equity, the hospital may wish to be highly risk-averse about this type of error. [Citation: DOC-017] healthcare delivery organizations to mitigate the risk of AI solutions worsening health inequities. [Citation: DOC-004]",
       "expected_answer": "Justice \u00b7 Transparency \u00b7 Consent \u00b7 Accountability \u00b7 Equity The five concerns are: (1) justice and fairness, (2) transparency, (3) patient consent and confidentiality, (4) accountability, and (5) patient-centred and equitable care. Algorithmic bias \u2014 caused by non-representative training datasets and opaque model development \u2014 is identified as most likely to worsen existing healthcare inequities.",
       "expected_sources": [
         "DOC-016",
         "DOC-017"
       ],
       "score": {
-        "factual_accuracy": 0.19047619047619047,
+        "factual_accuracy": 0.21428571428571427,
         "citation_quality": 0.5714285714285715,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7909848690032959,
-        "semantic_similarity": 0.5819697380065918
+        "completeness": 0.7731707990169525,
+        "semantic_similarity": 0.546341598033905
       }
     },
     {
       "eval_id": "EVAL-007",
       "question": "The Hastings Center identifies a specific behavioural tendency of large language models that makes them unsuitable as standalone therapists. What is it, and why does it pose a particular risk in mental health contexts?",
-      "answer": "Framework for bias evaluation in large language models in healthcare settings | npj Digital Medicine Skip to main content Thank you for visiting nature.com. [Citation: DOC-017] the right level of care,\" says Khalsa. [Citation: DOC-021] by Saeed Hassanpour 4,* Editor: Po-Chih Kuo5 Author information Article notes Copyright and License information 1Department of Biomedical Data Science, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 2Department of Health Policy and Management, Milken Institute School of Public Health, The George Washington University, Washington, DC, United States of America 3Dartmouth Institute for Health Policy and Clinical Practice, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 4Departments of Biomedical Data Science, Computer Science, and Epidemiology, Geisel School of Medicine, Dartmouth College, Hanover, New Hampshire, United States of America 5National Tsing-Hua University: National Tsing Hua University, TAIWAN The authors have declared that no competing interests exist. [Citation: DOC-016] ] [PMC free article] [PubMed] [Google Scholar] 12.Saeed S.A., Masters R.M. [Citation: DOC-018]",
+      "answer": "form a relationship that only affirms their delusional thinking. [Citation: DOC-019] Quantifying bias in agentic large language models: a benchmarking approach. [Citation: DOC-017] Medline. [Citation: DOC-009] c00549&doiOfLink=10.1109%2FBIBM62325.2024.10822084&linkType=gs&linkLocation=Reference&linkSource=FULL_TEXT)There is no corresponding record for this reference. [Citation: DOC-012] Health AI in the mental health care workforce is met with fear, pushback \u2014 and enthusiasm April 7, 2026 5:00 AM ET By Rhitu Chatterjee A strike by therapists spotlights a growing concern: AI replacing human providers Listen \u00b7 3:38 3:38 Transcript Toggle more options Download Embed Embed < iframe src=\"https://www.npr.org/player/embed/nx-s1-5771707/nx-s1-9695614\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\"> Transcript Jonathan Kitchen/Getty Images Artificial intelligence has arrived in the field of mental health. [Citation: DOC-021]",
       "expected_answer": "Sycophancy",
       "expected_sources": [
         "DOC-019"
       ],
       "score": {
         "factual_accuracy": 0.0,
-        "citation_quality": 0.0,
+        "citation_quality": 0.33333333333333337,
         "reasoning_clarity": 1.0,
-        "completeness": 0.5632486566901207,
-        "semantic_similarity": 0.1264973133802414
+        "completeness": 0.5636257529258728,
+        "semantic_similarity": 0.1272515058517456
       }
     },
     {
       "eval_id": "EVAL-008",
       "question": "A 2024 cross-sectional study of FDA-cleared AI devices found a critical gap in demographic reporting. What specific data was missing from the vast majority of device submissions, and what percentage of devices reported race/ethnicity data?",
-      "answer": "Regulatory documentation itself may further cloud the picture. [Citation: DOC-015] claims are supported by up-to-date, credible sources. [Citation: DOC-010]",
+      "answer": "The present study provides a comprehensive assessment of all AI/ML-enabled medical devices cleared or approved by the FDA during calendar year 2024. [Citation: DOC-015] on specific tasks. [Citation: DOC-010]",
       "expected_answer": "Race/ethnicity / 0% A 2024 cross-sectional study of 1,016 FDA-cleared AI/ML-enabled medical devices found that 0% reported race/ethnicity data in their validation studies, despite FDA guidance requiring demographic reporting. Age and sex were reported in 23% and 31% of submissions, respectively. The study concluded that most AI devices are validated on non-representative populations, increasing bias risk.",
       "expected_sources": [
         "DOC-015",
         "DOC-017"
       ],
       "score": {
-        "factual_accuracy": 0.0392156862745098,
+        "factual_accuracy": 0.2549019607843137,
         "citation_quality": 0.5,
         "reasoning_clarity": 0.75,
-        "completeness": 0.5230007767677307,
-        "semantic_similarity": 0.2960015535354614
+        "completeness": 0.7465876638889313,
+        "semantic_similarity": 0.7431753277778625
       }
     },
     {
       "eval_id": "EVAL-009",
       "question": "Imaging AI has high deployment rates across US health systems but only 19% of deployers report high success. Using what you know about FDA validation gaps and algorithmic bias literature, construct the most likely causal explanation for this gap.",
-      "answer": "degree of success with using AI for Clinical Documentation. [Citation: DOC-004] claims are supported by up-to-date, credible sources. [Citation: DOC-010] imates the AI model locally with an interpretable model to explain individual predictions [86]. [Citation: DOC-018] in the first quarter of 2024 alone, demonstrating continued investor confidence in AI biotech innovations88.The increasing trend of large-scale investments aligns with the growing importance of AI in streamlining drug development processes, improving patient recruitment, and enhancing therapeutic discovery. [Citation: DOC-014] Siala and Wang highlight responsible initiatives, including linking algorithm outputs to human decision-making, implementing a centralized institutional review board, and integrating diverse patient data to enhance explainability [39].Responsible innovation focused on inclusion Responsible healthcare AI innovation requires ethical, equitable technologies that prioritize patient needs while preventing harm, mitigating bias, and promoting inclusivity. [Citation: DOC-016]",
+      "answer": "The largest category is diagnostic imaging : AI tools for X-ray, CT, MRI, ultrasound, and nuclear medicine. [Citation: DOC-010] to essential healthcare services, artificial intelligence could help bridge that gap. [Citation: DOC-007] When Symbolic Solutions are Offered to Structural Problems: The Case of Racism in Canada. [Citation: DOC-008] Assessing socioeconomic bias in machine learning algorithms in health care: a case study of the HOUSES index. [Citation: DOC-017] Baylime: Bayesian local interpretable model-agnostic explanations; pp. [Citation: DOC-018]",
       "expected_answer": "Bias from non-representative training data Imaging AI deployment is high (90% in Fall 2024 survey) but success low (19%) because FDA-cleared devices are validated on non-representative populations (0% report race/ethnicity data). Algorithmic bias literature shows models trained on biased data perform worse on diverse real-world populations, leading to lower perceived success despite regulatory approval.",
       "expected_sources": [
         "DOC-004",
         "DOC-015"
       ],
       "score": {
-        "factual_accuracy": 0.2,
-        "citation_quality": 0.28571428571428575,
+        "factual_accuracy": 0.14,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7548573911190033,
-        "semantic_similarity": 0.5097147822380066
+        "completeness": 0.7834803760051727,
+        "semantic_similarity": 0.5669607520103455
       }
     },
     {
       "eval_id": "EVAL-010",
       "question": "Two frameworks for governing post-deployment AI in healthcare propose different monitoring mechanisms. One focuses on operationalised clinic-level audit steps; the other calls for adaptive regulatory oversight replacing pre-market review. Which framework is which, and what are the key differences?",
-      "answer": "settings. [Citation: DOC-017] tools are already improving screening and diagnosis workflows; case studies (like IDx-DR and AliveCor\u2019s ECG system) show real patient-level benefits when properly validated ([15]) ([16]). [Citation: DOC-010] in clinical diagnosis, despite predictions dating back to 2016 of AI replacing radiologists27,28 and a steady stream of AI-based imaging solutions undergoing FDA approval.29 These data indicate the need for developers of imaging and radiology AI to further collaborate with imaging-based clinicians to improve their workflow and decision-making quality.30,31 Given the current immaturity of AI tools and the need to balance speed with safety, it is clear that the heightened expectations associated with AI32 will need to be managed through robust evaluations to ensure AI deployed in healthcare is safe, effective and equitable.33 This is particularly relevant given mounting cost pressures and uncertainties on health systems,34 which might further constrain resources necessary to deploy, test, and monitor AI and in turn jeopardize patient safety and the long-term value of AI. [Citation: DOC-004] ., 2025 [122]; Richie, 2022 [123] Open in a new tabThese quantifiable measures can allow AI stakeholders to systematically assess the effectiveness and ethical alignment of AI systems in healthcare. [Citation: DOC-018] The GDPR employs a risk-based approach, categorizing AI applications as unacceptable, high, or limited risk, with high-risk applications including medical devices and critical infrastructure. [Citation: DOC-016]",
+      "answer": "dynamic updates that characterize AI models. [Citation: DOC-018] a clinician to validate results. [Citation: DOC-010] resource allocation. [Citation: DOC-020] in an ongoing way to ensure that their benefits continue to justify ongoing costs and risks. [Citation: DOC-004] findings from the 2024 cohort may not fully reflect the long-term uptake or impact of these regulatory initiatives, and ongoing surveillance will be necessary to assess trends over time. [Citation: DOC-015]",
       "expected_answer": "Clinic-level: Hastings Center / Regulatory: PLOS The Hastings Center proposes operationalised clinic-level audit steps for post-deployment monitoring, emphasizing local accountability. The PLOS Digital Health framework calls for adaptive regulatory oversight replacing pre-market review, focusing on continuous evaluation. Key difference: clinic-level is decentralized and practitioner-driven; regulatory is centralized and authority-driven.",
       "expected_sources": [
         "DOC-016",
         "DOC-018"
       ],
       "score": {
-        "factual_accuracy": 0.1951219512195122,
-        "citation_quality": 0.5714285714285715,
+        "factual_accuracy": 0.07317073170731707,
+        "citation_quality": 0.28571428571428575,
         "reasoning_clarity": 1.0,
-        "completeness": 0.6875625848770142,
-        "semantic_similarity": 0.3751251697540283
+        "completeness": 0.6518418192863464,
+        "semantic_similarity": 0.30368363857269287
       }
     },
     {
       "eval_id": "EVAL-011",
       "question": "On March 18 2026, mental health care providers at Kaiser Permanente went on strike. How many workers participated, what specific triage headcount change at one facility triggered the action, and what UK AI company was KP confirmed to be evaluating?",
-      "answer": "5, growing from USD 37.98 billion in 2025, at a CAGR of 37.66% during the forecast period from 2026 to 2035, as a result of the increasing adoption of advanced technology, innovation in clinical research and rising demand for customized healthcare.According to a current newsletter article of the National Institute of Health, a remarkable 99% accuracy achieved in evaluating mammograms, leading to quicker Breast cancer diagnosis, has driven market growth in the Healthcare Industry.Key Takeaways AI in healthcare sector pushed the market to USD 52.28 billion by 2026. [Citation: DOC-003] Chinese follows as the second most published language, growing from 292 to 1260 publications over the same period. [Citation: DOC-014] Research prototypes begin to match radiologist-level performance on specific tasks. [Citation: DOC-010] about AI chatbots \"There is a lot of fear and anxiety about AI,\" says psychologist Vaile Wright, senior director of health care innovation at the American Psychological Association (APA). [Citation: DOC-021] Nong P, Adler-Milstein J, Apathy NC, Holmgren AJ, Everson J. [Citation: DOC-004]",
+      "answer": "10.1148/ryai.2019190058 [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 31. [Citation: DOC-004] on specific tasks. [Citation: DOC-010] Members and Workshop Participants Approach Used to Create the 2025 Watch List Technologies and Issues Not Included in the Watch List Other titles in this collection CADTH Horizon Scans Related information PMC PubMed Central citations PubMed Links to PubMed Recent Activity Clear Turn Off Turn On 2025 Watch List: Artificial Intelligence in Health Care 2025 Watch List: Artificial Intelligence in Health Care Your browsing activity is empty. [Citation: DOC-008] subfield, including Drug Discovery and Development, Precision Medicine, Genomics and Proteomics, Synthetic Biology, Clinical Trials, Healthcare, Bioinformatics, Digital Biomarkers and more, shows increasing trends in AI-related publications and patents over the years. [Citation: DOC-014] an e-visit.\" She and her colleagues worry that this downsizing of the triage system is paving the way for AI to take over their jobs. [Citation: DOC-021]",
       "expected_answer": "1,500 workers / Triage headcount cut from 3 to 1 / Limbic Kaiser Permanente's 1,500 mental health care providers struck on March 18 2026 over AI implementation. The trigger was a triage headcount reduction from 3 to 1 at one facility, increasing provider workload. KP was evaluating Limbic, a UK AI company specializing in mental health chatbots.",
       "expected_sources": [
         "DOC-021"
       ],
       "score": {
-        "factual_accuracy": 0.3488372093023256,
+        "factual_accuracy": 0.23255813953488372,
         "citation_quality": 0.33333333333333337,
         "reasoning_clarity": 1.0,
-        "completeness": 0.6917969733476639,
-        "semantic_similarity": 0.38359394669532776
+        "completeness": 0.7387688755989075,
+        "semantic_similarity": 0.47753775119781494
       }
     }
   ],
   "averages": {
-    "factual_accuracy": 0.1941878042353059,
-    "citation_quality": 0.3573593073593074,
-    "reasoning_clarity": 0.9545454545454546,
-    "completeness": 0.698730736293576,
-    "semantic_similarity": 0.4429160180416974
+    "factual_accuracy": 0.1852077231556445,
+    "citation_quality": 0.35670995670995675,
+    "reasoning_clarity": 0.9772727272727273,
+    "completeness": 0.7283557030287656,
+    "semantic_similarity": 0.4794386787848039
   }
 }

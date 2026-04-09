@@ -8,6 +8,8 @@ import faiss
 import json
 import os
 from pathlib import Path
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 CORPUS_PDF = "healthcare_ai_corpus_v2.pdf"
 OUTPUT_JSON = "knowledge_base_ai_healthcare.json"
@@ -61,13 +63,57 @@ def extract_articles_from_pdf(pdf_path):
     
     return articles
 
+def _create_session():
+    session = requests.Session()
+    retry = Retry(total=3, backoff_factor=0.5, status_forcelist=[429, 500, 502, 503, 504])
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('https://', adapter)
+    session.mount('http://', adapter)
+    return session
+
+SESSION = _create_session()
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+}
+
+
+def extract_text_from_html(content):
+    soup = BeautifulSoup(content, 'lxml')
+    for tag in soup(['script', 'style', 'header', 'footer', 'nav', 'aside', 'form', 'noscript']):
+        tag.decompose()
+    # Prefer main article sections when available.
+    article = soup.find('article') or soup.find('main')
+    if article:
+        text = article.get_text(separator='\n')
+    else:
+        text = soup.get_text(separator='\n')
+    lines = (line.strip() for line in text.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split('  '))
+    return '\n'.join(chunk for chunk in chunks if chunk)
+
+
+def fetch_with_jina(url):
+    jina_url = 'https://r.jina.ai/http://' + url.replace('https://', '')
+    try:
+        response = SESSION.get(jina_url, timeout=20)
+        response.raise_for_status()
+        return response.text
+    except Exception as e:
+        print(f'Jina fallback failed for {url}: {e}')
+        return None
+
+
 def fetch_article(url):
     try:
-        response = requests.get(url, timeout=10)
+        response = SESSION.get(url, headers=HEADERS, timeout=15)
+        if response.status_code == 403 or response.status_code >= 500:
+            print(f'Primary fetch failed for {url} with status {response.status_code}, trying fallback')
+            fallback = fetch_with_jina(url)
+            return fallback
         response.raise_for_status()
         content_type = response.headers.get('content-type', '').lower()
         if 'pdf' in content_type:
-            # Handle PDF
             import io
             with pdfplumber.open(io.BytesIO(response.content)) as pdf:
                 text = ''
@@ -77,20 +123,10 @@ def fetch_article(url):
                         text += page_text + '\n'
             return text
         else:
-            # Handle HTML
-            soup = BeautifulSoup(response.content, 'lxml')
-            # Remove scripts, styles, etc.
-            for script in soup(["script", "style"]):
-                script.decompose()
-            text = soup.get_text()
-            # Clean text
-            lines = (line.strip() for line in text.splitlines())
-            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-            text = '\n'.join(chunk for chunk in chunks if chunk)
-            return text
+            return extract_text_from_html(response.content)
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+        print(f'Error fetching {url}: {e}. Trying fallback.')
+        return fetch_with_jina(url)
 
 def clean_text(text):
     # Remove excessive whitespace, headers, footers, etc.
