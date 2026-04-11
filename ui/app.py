@@ -36,7 +36,7 @@ if submit and query:
 
 if st.session_state.history:
     with st.expander("💬 Conversation history", expanded=False):
-        for i, item in enumerate(st.session_state.history, start=1):
+        for i, item in enumerate(result["sub_queries"], 1):
             st.markdown(f"**Query {i}:** {item['query']}")
             st.markdown(f"**Answer:** {item['answer']}")
             st.markdown(f"**Critic:** {item['critique']}")
