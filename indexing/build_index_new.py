@@ -135,17 +135,24 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
-def chunk_text(text, chunk_size=1000, overlap=200):
-    enc = tiktoken.get_encoding("cl100k_base")  # GPT-4 encoding
-    tokens = enc.encode(text)
+def chunk_text(text, chunk_size=500, overlap=100):
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    sentences = [s.strip() for s in sentences if s.strip()]
+    enc = tiktoken.get_encoding("cl100k_base")
     chunks = []
-    start = 0
-    while start < len(tokens):
-        end = min(start + chunk_size, len(tokens))
-        chunk_tokens = tokens[start:end]
-        chunk_text = enc.decode(chunk_tokens)
-        chunks.append(chunk_text)
-        start += chunk_size - overlap
+    current_chunk = []
+    current_tokens = 0
+    for sentence in sentences:
+        sent_tokens = len(enc.encode(sentence))
+        if current_tokens + sent_tokens > chunk_size and current_chunk:
+            chunks.append(" ".join(current_chunk))
+            current_chunk = [sentence]
+            current_tokens = sent_tokens
+        else:
+            current_chunk.append(sentence)
+            current_tokens += sent_tokens
+    if current_chunk:
+        chunks.append(" ".join(current_chunk))
     return chunks
 
 def main():

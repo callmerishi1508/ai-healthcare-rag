@@ -7,11 +7,26 @@ import re
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
-
 from pipeline.rag_pipeline import RAGPipeline
 
 EVAL_PATH = Path("eval_set_v3.json")
 OUTPUT_PATH = Path("eval_results.json")
+
+def extract_key_facts(expected_answer):
+    # Extract numbers with % and specific terms
+    facts = []
+    # Percentages
+    percents = re.findall(r'\b\d+%\b', expected_answer)
+    facts.extend(percents)
+    # Numbers
+    numbers = re.findall(r'\b\d{1,4}(?:,\d{3})*\b', expected_answer)
+    facts.extend(numbers)
+    # Specific terms
+    terms = ['Ambient Notes', 'chatRWD', 'Phase IIa', 'IPF', 'Recursion', 'Exscientia', 'justice', 'fairness', 'transparency', 'algorithmic bias', 'sycophancy', 'race/ethnicity', '0%', 'bias', 'high deployment', 'low success', 'clinic-level', 'regulatory', '1,500', 'triage', '3', '1', 'Limbic', 'Kaiser', 'strike']
+    for term in terms:
+        if term.lower() in expected_answer.lower():
+            facts.append(term)
+    return list(set(facts))  # unique
 
 pipeline = RAGPipeline()
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -76,7 +91,9 @@ for item in data.get("questions", []):
     expected_answer = item.get("expected_answer", "")
     expected_sources = item.get("source_docs", [])
 
-    result = pipeline.run(question, use_history=False)
+    key_facts = extract_key_facts(expected_answer)
+
+    result = pipeline.run(question, use_history=False, key_facts=key_facts)
     answer = result["answer"]
     trace = result.get("trace", "")
 

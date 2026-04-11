@@ -3,73 +3,73 @@
     {
       "eval_id": "EVAL-001",
       "question": "What percentage of healthcare organisations had implemented domain-specific AI tools as of 2025, and how does this compare to the broader enterprise market?",
-      "answer": "Market analyses project continued explosive growth (CAGR ~30\u201340%) ( [2] ) ( [4] ). [Citation: DOC-010]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "22% vs 9% 22% of healthcare organisations deployed domain-specific AI tools \u2014 a 7\u00d7 increase over 2024 (from ~3%) and 10\u00d7 over 2023. Health systems lead at 27%, outpatient providers 18%, payers 14%. Across the broader economy, fewer than 1 in 10 companies (9%) had implemented any AI, and most relied on general tools like enterprise ChatGPT rather than purpose-built solutions. Note: the 22% measures domain-specific healthcare AI; the 9% measures any AI broadly \u2014 the comparison is directionally valid but not definitionally equivalent.",
       "expected_sources": [
         "DOC-001",
         "DOC-004"
       ],
       "score": {
-        "factual_accuracy": 0.0,
-        "citation_quality": 0.0,
+        "factual_accuracy": 0.07692307692307693,
+        "citation_quality": 0.6666666666666666,
         "reasoning_clarity": 1.0,
-        "completeness": 0.5559561662375927,
-        "semantic_similarity": 0.1119123324751854
+        "completeness": 0.7386842370033264,
+        "semantic_similarity": 0.47736847400665283
       }
     },
     {
       "eval_id": "EVAL-002",
       "question": "In a Fall 2024 survey of 43 US non-profit health systems, which AI use case was the only one with 100% adoption activity, and what success rate did respondents report for it?",
-      "answer": "the average US health system. [Citation: DOC-004]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Ambient Notes / 53% Ambient Notes \u2014 AI-generated clinical documentation \u2014 was the only use case with 100% of respondents reporting adoption activity (developing, piloting, or deploying). 53% reported a high degree of success with it. By contrast, imaging and radiology had 90% deployment but only 19%.",
       "expected_sources": [
         "DOC-004"
       ],
       "score": {
-        "factual_accuracy": 0.02564102564102564,
+        "factual_accuracy": 0.5897435897435898,
         "citation_quality": 1.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.653691828250885,
-        "semantic_similarity": 0.30738365650177
+        "completeness": 0.9116221070289612,
+        "semantic_similarity": 0.8232442140579224
       }
     },
     {
       "eval_id": "EVAL-003",
       "question": "What share of clinical questions did the agentic system ChatRWD answer usefully, compared to standard large language models such as ChatGPT and Gemini?",
-      "answer": "to guide healthcare decisions Doctors must make informed, swift medical decisions: AI could potentially speed these up, but it could also provide unreliable or biased information. [Citation: DOC-007]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "58% (agentic) vs 2\u201310% (LLMs) In a 50-question evaluation by nine independent physicians, ChatRWD \u2014 an agentic system using a causal inference engine and real-world data pipeline \u2014 answered 58% of clinical questions with relevant, evidence-based responses. Standard LLMs (ChatGPT-4, Claude 3 Opus, Gemini 1.5 Pro) answered only 2\u201310%. The RAG-based comparator, OpenEvidence, scored 24%. Architecture note: this study validates agentic approaches over standalone RAG for novel clinical questions where no pre-existing literature exists.",
       "expected_sources": [
         "DOC-009"
       ],
       "score": {
-        "factual_accuracy": 0.0,
+        "factual_accuracy": 0.13043478260869565,
         "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7175177782773972,
-        "semantic_similarity": 0.4350355565547943
+        "completeness": 0.7454560101032257,
+        "semantic_similarity": 0.4909120202064514
       }
     },
     {
       "eval_id": "EVAL-004",
       "question": "How many FDA-cleared AI/ML-enabled medical devices existed in the United States by mid-2024, and which clinical specialty accounts for the largest share of those approvals?",
-      "answer": "Back to Articles | By Adrien Laurent | Updated on 4/6/2026 | 50 min read | Next Article More Download PDF PDF AI Medical Devices: 2025 Status, Regulation & Challenges ai medical devices medical device regulation software as a medical device fda guidance eu ai act ai in healthcare algorithmic bias Executive Summary The field of AI-enabled medical devices has expanded dramatically in recent years, transforming many areas of healthcare while raising regulatory, technical, and ethical challenges. [Citation: DOC-010]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "~950 total / Radiology 76% Approximately 950 AI/ML medical devices had been cleared by the FDA by August 2024, up from under 400 cumulative by end-2020. Radiology dominates, accounting for 723 of those 950 devices (76%) \u2014 far exceeding cardiovascular (~10%) and neurology (~4%). By end-2024 the cumulative total reached 1,016 with 769 radiology-specific; by end-2025, 1,451 total with ~1,104 radiology-specific (still ~76%).",
       "expected_sources": [
         "DOC-010",
         "DOC-015"
       ],
       "score": {
-        "factual_accuracy": 0.2127659574468085,
-        "citation_quality": 0.6666666666666666,
+        "factual_accuracy": 0.1276595744680851,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7499491274356842,
-        "semantic_similarity": 0.4998982548713684
+        "completeness": 0.651661828160286,
+        "semantic_similarity": 0.3033236563205719
       }
     },
     {
       "eval_id": "EVAL-005",
       "question": "What Phase II milestone did Insilico Medicine reach with its AI-designed drug ISM001-055 (Rentosertib), what disease does it target, and what company merger in the same period reshaped the AI drug discovery competitive landscape?",
-      "answer": "sources were included from the reference lists of key studies to ensure comprehensive coverage. [Citation: DOC-013]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Phase IIa \u00b7 IPF \u00b7 Recursion\u2013Exscientia Insilico reported positive Phase IIa results for ISM001-055 (now branded Rentosertib), a TNIK kinase inhibitor for idiopathic pulmonary fibrosis (IPF) \u2014 one of the first AI-designed molecules to reach clinical proof-of-concept, published in Nature Medicine June 2025. The 71-patient, 21-site China trial showed dose-dependent improvement in forced vital capacity (FVC). The Recursion\u2013Exscientia merger (completed November 20, 2024) combined Recursion's scaled biology exploration with Exscientia's precision chemistry and automated synthesis. Both \"ISM001-055\" and \"Rentosertib\" are correct names.",
       "expected_sources": [
         "DOC-011",
@@ -77,50 +77,50 @@
         "DOC-013"
       ],
       "score": {
-        "factual_accuracy": 0.04054054054054054,
-        "citation_quality": 0.5,
+        "factual_accuracy": 0.12162162162162163,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.6077953800559044,
-        "semantic_similarity": 0.21559076011180878
+        "completeness": 0.5715615525841713,
+        "semantic_similarity": 0.1431231051683426
       }
     },
     {
       "eval_id": "EVAL-006",
       "question": "A 2025 PLOS Digital Health paper identifies five critical ethical concerns in clinical AI integration. What are they, and which concern does the paper call out as most likely to worsen existing healthcare inequities?",
-      "answer": "PLOS Digit Health . [Citation: DOC-016]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Justice \u00b7 Transparency \u00b7 Consent \u00b7 Accountability \u00b7 Equity The five concerns are: (1) justice and fairness, (2) transparency, (3) patient consent and confidentiality, (4) accountability, and (5) patient-centred and equitable care. Algorithmic bias \u2014 caused by non-representative training datasets and opaque model development \u2014 is identified as most likely to worsen existing healthcare inequities.",
       "expected_sources": [
         "DOC-016",
         "DOC-017"
       ],
       "score": {
-        "factual_accuracy": 0.0,
-        "citation_quality": 0.6666666666666666,
+        "factual_accuracy": 0.047619047619047616,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.5867327973246574,
-        "semantic_similarity": 0.17346559464931488
+        "completeness": 0.6262556314468384,
+        "semantic_similarity": 0.25251126289367676
       }
     },
     {
       "eval_id": "EVAL-007",
       "question": "The Hastings Center identifies a specific behavioural tendency of large language models that makes them unsuitable as standalone therapists. What is it, and why does it pose a particular risk in mental health contexts?",
-      "answer": "www.nytimes.com/2025/09/26/well/is-ai-validation-healthy.html), so when they are [designed to better engage](https://arxiv.org/abs/2303.06135) patients, patients may form a relationship that only affirms their delusional thinking. [Citation: DOC-019]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Sycophancy",
       "expected_sources": [
         "DOC-019"
       ],
       "score": {
         "factual_accuracy": 0.0,
-        "citation_quality": 1.0,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.5773543417453766,
-        "semantic_similarity": 0.15470868349075317
+        "completeness": 0.48161137104034424,
+        "semantic_similarity": -0.03677725791931152
       }
     },
     {
       "eval_id": "EVAL-008",
       "question": "A 2024 cross-sectional study of FDA-cleared AI devices found a critical gap in demographic reporting. What specific data was missing from the vast majority of device submissions, and what percentage of devices reported race/ethnicity data?",
-      "answer": "in the United States described capabilities that were not reflected in their cleared indications for use, which raised concerns about \u201cfunction creep\u201d beyond the evidence base reviewed by the FDA [ 6 ]. [Citation: DOC-015]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Race/ethnicity / 0% A 2024 cross-sectional study of 1,016 FDA-cleared AI/ML-enabled medical devices found that 0% reported race/ethnicity data in their validation studies, despite FDA guidance requiring demographic reporting. Age and sex were reported in 23% and 31% of submissions, respectively. The study concluded that most AI devices are validated on non-representative populations, increasing bias risk.",
       "expected_sources": [
         "DOC-015",
@@ -128,68 +128,68 @@
       ],
       "score": {
         "factual_accuracy": 0.13725490196078433,
-        "citation_quality": 0.6666666666666666,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.7115075290203094,
-        "semantic_similarity": 0.4230150580406189
+        "completeness": 0.7110447138547897,
+        "semantic_similarity": 0.42208942770957947
       }
     },
     {
       "eval_id": "EVAL-009",
       "question": "Imaging AI has high deployment rates across US health systems but only 19% of deployers report high success. Using what you know about FDA validation gaps and algorithmic bias literature, construct the most likely causal explanation for this gap.",
-      "answer": "Similarly, only 19% of institutions reported a high degree of success for AI used in clinical diagnosis, despite predictions dating back to 2016 of AI replacing radiologists 27 , 28 and a steady stream of AI-based imaging solutions undergoing FDA approval. [Citation: DOC-004]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Bias from non-representative training data Imaging AI deployment is high (90% in Fall 2024 survey) but success low (19%) because FDA-cleared devices are validated on non-representative populations (0% report race/ethnicity data). Algorithmic bias literature shows models trained on biased data perform worse on diverse real-world populations, leading to lower perceived success despite regulatory approval.",
       "expected_sources": [
         "DOC-004",
         "DOC-015"
       ],
       "score": {
-        "factual_accuracy": 0.2,
+        "factual_accuracy": 0.06,
         "citation_quality": 0.6666666666666666,
         "reasoning_clarity": 1.0,
-        "completeness": 0.8257400393486023,
-        "semantic_similarity": 0.6514800786972046
+        "completeness": 0.6583742201328278,
+        "semantic_similarity": 0.3167484402656555
       }
     },
     {
       "eval_id": "EVAL-010",
       "question": "Two frameworks for governing post-deployment AI in healthcare propose different monitoring mechanisms. One focuses on operationalised clinic-level audit steps; the other calls for adaptive regulatory oversight replacing pre-market review. Which framework is which, and what are the key differences?",
-      "answer": "AI adoption in healthcare. [Citation: DOC-018]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "Clinic-level: Hastings Center / Regulatory: PLOS The Hastings Center proposes operationalised clinic-level audit steps for post-deployment monitoring, emphasizing local accountability. The PLOS Digital Health framework calls for adaptive regulatory oversight replacing pre-market review, focusing on continuous evaluation. Key difference: clinic-level is decentralized and practitioner-driven; regulatory is centralized and authority-driven.",
       "expected_sources": [
         "DOC-016",
         "DOC-018"
       ],
       "score": {
-        "factual_accuracy": 0.0,
-        "citation_quality": 0.6666666666666666,
+        "factual_accuracy": 0.07317073170731707,
+        "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.6296858489513397,
-        "semantic_similarity": 0.25937169790267944
+        "completeness": 0.5931497737765312,
+        "semantic_similarity": 0.18629954755306244
       }
     },
     {
       "eval_id": "EVAL-011",
       "question": "On March 18 2026, mental health care providers at Kaiser Permanente went on strike. How many workers participated, what specific triage headcount change at one facility triggered the action, and what UK AI company was KP confirmed to be evaluating?",
-      "answer": "ulate-ai-medical-device/715072/#:~:The%2... [Citation: DOC-010]",
+      "answer": "Ambient Notes, a generative AI tool for clinical documentation, was the only use case with 100% of respondents reporting adoption activities, and 53% reported a high degree of success with using AI for Clinical Documentation. [Citation: DOC-004]",
       "expected_answer": "1,500 workers / Triage headcount cut from 3 to 1 / Limbic Kaiser Permanente's 1,500 mental health care providers struck on March 18 2026 over AI implementation. The trigger was a triage headcount reduction from 3 to 1 at one facility, increasing provider workload. KP was evaluating Limbic, a UK AI company specializing in mental health chatbots.",
       "expected_sources": [
         "DOC-021"
       ],
       "score": {
-        "factual_accuracy": 0.046511627906976744,
+        "factual_accuracy": 0.09302325581395349,
         "citation_quality": 0.0,
         "reasoning_clarity": 1.0,
-        "completeness": 0.6349423825740814,
-        "semantic_similarity": 0.26988476514816284
+        "completeness": 0.6357245743274689,
+        "semantic_similarity": 0.27144914865493774
       }
     }
   ],
   "averages": {
-    "factual_accuracy": 0.060246732136012345,
-    "citation_quality": 0.5303030303030304,
+    "factual_accuracy": 0.1324955074969247,
+    "citation_quality": 0.2121212121212121,
     "reasoning_clarity": 1.0,
-    "completeness": 0.65917029265653,
-    "semantic_similarity": 0.3183405853130601
+    "completeness": 0.6659223654053428,
+    "semantic_similarity": 0.3318447308106856
   }
 }

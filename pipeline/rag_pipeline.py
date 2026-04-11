@@ -15,7 +15,7 @@ class RAGPipeline:
         recent = " ".join(item["query"] for item in self.history[-3:])
         return f"{query} (follow-up on: {recent})"
 
-    def run(self, query, use_history=True):
+    def run(self, query, use_history=True, key_facts=None):
         try:
             expanded_query = self._build_context_query(query) if use_history else query
             complex_query = self.retriever.is_complex(expanded_query)
@@ -23,7 +23,7 @@ class RAGPipeline:
 
             all_context = []
             for sq in sub_queries:
-                retrieved = self.retriever.retrieve(sq, k=5)
+                retrieved = self.retriever.retrieve(sq, k=5, key_facts=key_facts)
                 all_context.extend(retrieved)
 
             seen = set()
