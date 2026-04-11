@@ -11,11 +11,30 @@ from pathlib import Path
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+# ================== CONFIG ==================
 CORPUS_PDF = "healthcare_ai_corpus_v2.pdf"
 OUTPUT_JSON = "knowledge_base_ai_healthcare.json"
 INDEX_FILE = "index.faiss"
 METADATA_FILE = "metadata.json"
 
+# ================== SESSION ==================
+def create_session():
+    session = requests.Session()
+    retry = Retry(total=3, backoff_factor=0.5,
+                  status_forcelist=[429, 500, 502, 503, 504])
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('https://', adapter)
+    session.mount('http://', adapter)
+    return session
+
+SESSION = create_session()
+
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0',
+    'Accept': 'text/html'
+}
+
+# ================== PDF PARSER ==================
 def extract_articles_from_pdf(pdf_path):
     articles = []
     with pdfplumber.open(pdf_path) as pdf:
@@ -24,33 +43,29 @@ def extract_articles_from_pdf(pdf_path):
             page_text = page.extract_text()
             if page_text:
                 text += page_text + '\n'
-    
-    # Find all article blocks
-    # Pattern: number TYPE\nTitle\nSource · Date · Qtags\nURL
+
     pattern = r'(\d{2}) (\w+)\n(.*?)\n(.*?)\n(https?://[^\s]+)'
     matches = re.findall(pattern, text, re.MULTILINE)
-    
+
     for match in matches:
         number = int(match[0])
         article_type = match[1]
         title = match[2].strip()
         source_date = match[3].strip()
         url = match[4].strip()
-        
-        # Parse source_date
-        source = ""
-        date = ""
-        q_tags = []
+
+        source, date, q_tags = "", "", []
+
         if '·' in source_date:
             parts = source_date.split('·')
             source = parts[0].strip()
             for part in parts[1:]:
                 part = part.strip()
-                if re.match(r'\d{4}', part) or any(month in part for month in ['Fall', 'Dec', 'Oct', 'Aug', 'Nov', 'Jul', 'Apr', 'Mar', 'Jan']):
+                if re.match(r'\d{4}', part) or any(m in part for m in ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Fall']):
                     date = part
                 elif part.startswith('Q'):
                     q_tags.extend(re.findall(r'Q\d+', part))
-        
+
         articles.append({
             'number': number,
             'type': article_type,
@@ -60,175 +75,169 @@ def extract_articles_from_pdf(pdf_path):
             'q_tags': q_tags,
             'url': url
         })
-    
+
     return articles
 
-def _create_session():
-    session = requests.Session()
-    retry = Retry(total=3, backoff_factor=0.5, status_forcelist=[429, 500, 502, 503, 504])
-    adapter = HTTPAdapter(max_retries=retry)
-    session.mount('https://', adapter)
-    session.mount('http://', adapter)
-    return session
-
-SESSION = _create_session()
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-}
-
-
+# ================== HTML CLEAN ==================
 def extract_text_from_html(content):
     soup = BeautifulSoup(content, 'lxml')
-    for tag in soup(['script', 'style', 'header', 'footer', 'nav', 'aside', 'form', 'noscript']):
+
+    for tag in soup(['script','style','header','footer','nav','aside','form','noscript']):
         tag.decompose()
-    # Prefer main article sections when available.
-    article = soup.find('article') or soup.find('main')
-    if article:
-        text = article.get_text(separator='\n')
+
+    selectors = ['article', 'main', '.content', '.post', '.article-body']
+
+    for sel in selectors:
+        section = soup.select_one(sel)
+        if section:
+            text = section.get_text(separator=' ')
+            break
     else:
-        text = soup.get_text(separator='\n')
-    lines = (line.strip() for line in text.splitlines())
-    chunks = (phrase.strip() for line in lines for phrase in line.split('  '))
-    return '\n'.join(chunk for chunk in chunks if chunk)
+        text = soup.get_text(separator=' ')
 
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
 
+# ================== JINA FALLBACK ==================
 def fetch_with_jina(url):
-    jina_url = 'https://r.jina.ai/http://' + url.replace('https://', '')
     try:
+        jina_url = 'https://r.jina.ai/http://' + url.replace('https://', '')
         response = SESSION.get(jina_url, timeout=20)
         response.raise_for_status()
-        return response.text
-    except Exception as e:
-        print(f'Jina fallback failed for {url}: {e}')
+
+        text = response.text
+        text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
+        text = re.sub(r'\[.*?\]\(.*?\)', '', text)
+
+        return text
+    except:
         return None
 
-
+# ================== FETCH ==================
 def fetch_article(url):
     try:
         response = SESSION.get(url, headers=HEADERS, timeout=15)
-        if response.status_code == 403 or response.status_code >= 500:
-            print(f'Primary fetch failed for {url} with status {response.status_code}, trying fallback')
-            fallback = fetch_with_jina(url)
-            return fallback
-        response.raise_for_status()
-        content_type = response.headers.get('content-type', '').lower()
+
+        if response.status_code >= 400:
+            return fetch_with_jina(url)
+
+        content_type = response.headers.get('content-type','')
+
         if 'pdf' in content_type:
             import io
             with pdfplumber.open(io.BytesIO(response.content)) as pdf:
                 text = ''
                 for page in pdf.pages:
-                    page_text = page.extract_text()
-                    if page_text:
-                        text += page_text + '\n'
-            return text
-        else:
-            return extract_text_from_html(response.content)
-    except Exception as e:
-        print(f'Error fetching {url}: {e}. Trying fallback.')
+                    t = page.extract_text()
+                    if t:
+                        text += t
+                return text
+
+        return extract_text_from_html(response.content)
+
+    except:
         return fetch_with_jina(url)
 
+# ================== CLEAN ==================
 def clean_text(text):
-    # Remove excessive whitespace, headers, footers, etc.
-    # This is basic; can be improved
-    text = re.sub(r'\n+', '\n', text)
     text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'cookie|privacy policy|terms of use', '', text, flags=re.I)
     return text.strip()
 
-def chunk_text(text, chunk_size=500, overlap=100):
-    sentences = re.split(r'(?<=[.!?])\s+', text)
-    sentences = [s.strip() for s in sentences if s.strip()]
-    enc = tiktoken.get_encoding("cl100k_base")
+# ================== CHUNK ==================
+def chunk_text(text, chunk_size=800, overlap=150):
+    words = text.split()
     chunks = []
-    current_chunk = []
-    current_tokens = 0
-    for sentence in sentences:
-        sent_tokens = len(enc.encode(sentence))
-        if current_tokens + sent_tokens > chunk_size and current_chunk:
-            chunks.append(" ".join(current_chunk))
-            current_chunk = [sentence]
-            current_tokens = sent_tokens
-        else:
-            current_chunk.append(sentence)
-            current_tokens += sent_tokens
-    if current_chunk:
-        chunks.append(" ".join(current_chunk))
+    start = 0
+
+    while start < len(words):
+        chunk_words = words[start:start+chunk_size]
+        chunk = " ".join(chunk_words)
+
+        if len(chunk) > 200:
+            chunks.append(chunk)
+
+        start += (chunk_size - overlap)
+
     return chunks
 
+# ================== MAIN ==================
 def main():
     articles = extract_articles_from_pdf(CORPUS_PDF)
     print(f"Found {len(articles)} articles")
-    for art in articles:
-        print(f"{art['number']}: {art['title']} - {art['url']}")
-    
+
     documents = []
+    seen_chunks = set()
+
     for art in articles:
-        print(f"Fetching article {art['number']}: {art['title']}")
+        print(f"\nFetching {art['number']}...")
+
         text = fetch_article(art['url'])
-        if text:
-            text = clean_text(text)
-            chunks = chunk_text(text)
-            for i, chunk in enumerate(chunks):
-                doc = {
-                    "doc_id": f"DOC-{art['number']:03d}",
-                    "title": art['title'],
-                    "source": art['source'],
-                    "url": art['url'],
-                    "date": art['date'],
-                    "type": art['type'],
-                    "q_tags": art['q_tags'],
-                    "text": chunk,
-                    "chunk_id": f"DOC-{art['number']:03d}-{i+1}"
-                }
-                documents.append(doc)
-        else:
-            print(f"Failed to fetch {art['url']}")
-    
-    # Save to JSON
-    data = {
-        "metadata": {
-            "dataset_name": "AI in Healthcare Knowledge Base",
-            "version": "2.0",
-            "created": "2026-04-09",
-            "domain": "AI in Healthcare",
-            "total_documents": len(documents),
-            "source_types": {"fetched": len(documents)}
-        },
-        "documents": documents
-    }
-    with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
 
-    if documents:
-        # Now, build index as before
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        texts = [doc['text'] for doc in documents]
-        embeddings = model.encode(texts)
+        if not text or len(text) < 2000:
+            print("❌ Skipped (low content)")
+            continue
 
-        dimension = embeddings.shape[1]
-        index = faiss.IndexFlatIP(dimension)
-        faiss.normalize_L2(embeddings)
-        index.add(embeddings)
+        text = clean_text(text)
 
-        faiss.write_index(index, INDEX_FILE)
+        # Debug save
+        with open(f"raw_DOC_{art['number']:03d}.txt", "w", encoding="utf-8") as f:
+            f.write(text[:5000])
 
-        # Metadata
-        metadata = []
-        for doc in documents:
-            metadata.append({
-                "doc_id": doc["doc_id"],
-                "title": doc["title"],
-                "source": doc["source"],
-                "url": doc["url"],
-                "date": doc["date"],
-                "chunk_id": doc["chunk_id"]
+        if "AI" not in text and "healthcare" not in text:
+            print("⚠️ Irrelevant skipped")
+            continue
+
+        chunks = chunk_text(text)
+
+        for i, chunk in enumerate(chunks):
+            if chunk in seen_chunks:
+                continue
+            seen_chunks.add(chunk)
+
+            documents.append({
+                "doc_id": f"DOC-{art['number']:03d}",
+                "title": art['title'],
+                "source": art['source'],
+                "url": art['url'],
+                "date": art['date'],
+                "type": art['type'],
+                "q_tags": art['q_tags'],
+                "text": chunk,
+                "chunk_id": f"DOC-{art['number']:03d}-{i+1}"
             })
-        with open(METADATA_FILE, 'w', encoding='utf-8') as f:
-            json.dump(metadata, f, indent=2)
 
-        print("Indexing complete")
-    else:
-        print("No documents to index")
+    print(f"\nTotal chunks: {len(documents)}")
 
+    # Save JSON
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump({"documents": documents}, f, indent=2)
+
+    # ================== EMBEDDINGS ==================
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+    texts = [doc["text"] for doc in documents]
+    embeddings = model.encode(texts)
+
+    faiss.normalize_L2(embeddings)
+
+    index = faiss.IndexFlatIP(embeddings.shape[1])
+    index.add(embeddings)
+
+    faiss.write_index(index, INDEX_FILE)
+
+    # Metadata
+    metadata = [{
+        "doc_id": d["doc_id"],
+        "title": d["title"],
+        "url": d["url"],
+        "chunk_id": d["chunk_id"]
+    } for d in documents]
+
+    with open(METADATA_FILE, "w") as f:
+        json.dump(metadata, f, indent=2)
+
+    print("✅ INDEX BUILT SUCCESSFULLY")
+
+# ================== RUN ==================
 if __name__ == "__main__":
     main()

@@ -1,9 +1,19 @@
-import pdfplumber
+def extract_text_from_html(content):
+    soup = BeautifulSoup(content, 'lxml')
 
-pdf_path = "healthcare_ai_corpus_v2.pdf"
+    for tag in soup(['script', 'style', 'header', 'footer', 'nav', 'aside', 'form', 'noscript']):
+        tag.decompose()
 
-with pdfplumber.open(pdf_path) as pdf:
-    for i, page in enumerate(pdf.pages):
-        text = page.extract_text()
-        if text:
-            print(f"Page {i+1}:\n{text}\n{'-'*50}")
+    # Try strong selectors first
+    selectors = ['article', 'main', '.content', '.post', '.article-body']
+
+    for sel in selectors:
+        section = soup.select_one(sel)
+        if section:
+            text = section.get_text(separator=' ')
+            break
+    else:
+        text = soup.get_text(separator=' ')
+
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()

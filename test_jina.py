@@ -1,11 +1,16 @@
-import requests
-urls=['https://www.weforum.org/stories/2025/08/ai-transforming-global-health/']
-for url in urls:
-    u='https://r.jina.ai/http://'+url.replace('https://','')
-    print('trying',u)
+def fetch_with_jina(url):
+    jina_url = 'https://r.jina.ai/http://' + url.replace('https://', '')
     try:
-        r=requests.get(u,timeout=15)
-        print(r.status_code, len(r.text))
-        print(r.text[:200])
+        response = SESSION.get(jina_url, timeout=20)
+        response.raise_for_status()
+
+        text = response.text
+
+        # 🔥 REMOVE markdown artifacts
+        text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
+        text = re.sub(r'\[.*?\]\(.*?\)', '', text)
+
+        return text
     except Exception as e:
-        print('error',e)
+        print(f'Jina fallback failed for {url}: {e}')
+        return None

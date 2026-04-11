@@ -4,3 +4,7 @@ sentence-transformers
 langchain-text-splitters
 rank-bm25
 numpy
+beautifulsoup4
+lxml
+pdfplumber
+tiktoken
